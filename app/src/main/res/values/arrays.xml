@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cell_types">
+        <item>Macrophage</item>
+        <item>CD4 T-cell</item>
+        <item>CD8 T-cell</item>
+        <item>NK cell</item>
+        <item>Neutrophil</item>
+        <item>Basophil</item>
+        <item>B-cell</item>
+    </string-array>
+</resources>

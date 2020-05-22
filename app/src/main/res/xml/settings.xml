@@ -1,0 +1,45 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <androidx.preference.PreferenceCategory
+        android:title="empty spacer">
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="application_settings">
+        <!--Privacy Settings-->
+        <SwitchPreferenceCompat
+            android:key="privacy"
+            android:title="title_privacy_settings"
+            android:summary="summary_privacy_settings"/>
+        <!--Preference for units, metric vs imperial-->
+        <ListPreference
+            android:key="unitpref"
+            android:title="title_unitpref"
+            android:summary="summary_unitpref"
+            android:entries="@array/cell_types"
+            android:entryValues="@array/cell_types"
+            android:dialogTitle="title_unitpref"/>
+        <!--TODO: Check if need entry values for the list preference-->
+        <!--personal website title-->
+        <androidx.preference.PreferenceScreen
+            android:title="title_website"
+            android:summary="summary_website">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://www.cs.dartmouth.edu/~campbell/cs65/cs65.html" />
+        </androidx.preference.PreferenceScreen>
+        <!--TODO: Check if need to be able to change website-->
+
+    </androidx.preference.PreferenceCategory>
+
+    <!--Sign-out button, referenced https://stackoverflow.com/questions/7275015/android-start-activity-from-preferences-xml-->
+    <androidx.preference.PreferenceCategory
+        android:title="account_settings">
+        <PreferenceScreen
+            android:title="title_sign_out">
+            <intent android:action="com.example.myruns4.SigninActivity">
+            </intent>
+            <!--android:targetPackage="com.example.myruns4"
+            android:targetClass="com.example.myruns4.activities.SigninActivity"/>-->
+        </PreferenceScreen>
+    </androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>
