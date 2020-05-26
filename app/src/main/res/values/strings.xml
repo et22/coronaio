@@ -17,4 +17,5 @@
     <string name="email_address">Email address</string>
     <string name="hint_password">Password</string>
     <string name="cell_type_text">Choose your default cell type below, you can always change it later!</string>
+    <string name="score_text">Score:</string>
 </resources>

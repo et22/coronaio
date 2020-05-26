@@ -1448,6 +1448,7 @@ drawable abc_vector_test
 drawable alveoli
 drawable avd_hide_password
 drawable avd_show_password
+drawable back_home
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1526,6 +1527,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable play_again
 drawable play_ffa
 drawable play_solo
 drawable preference_list_divider_material
@@ -1535,6 +1537,7 @@ drawable test_custom_background
 drawable title
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable won_score
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1614,6 +1617,8 @@ id blocking
 id bottom
 id buttonPanel
 id button_create_account
+id button_home
+id button_play_again
 id button_play_ffa
 id button_play_solo
 id button_register
@@ -1708,7 +1713,6 @@ id line1
 id line3
 id listMode
 id list_item
-id macrophage_
 id mainLayout
 id map
 id masked
@@ -1812,6 +1816,8 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id solo_animated_view
+id solo_animated_view_container
 id spacer
 id spinner
 id split_action_bar
@@ -1835,7 +1841,6 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
-id tcell_1
 id terrain
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
@@ -1871,6 +1876,7 @@ id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
 id wide
+id win_score_text_view
 id withText
 id wrap
 id wrap_content
@@ -1935,6 +1941,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_game_over
 layout activity_home
 layout activity_login
 layout activity_maps
@@ -2148,6 +2155,7 @@ string path_password_strike_through
 string preference_copied
 string prompt_email
 string prompt_password
+string score_text
 string search_menu_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list

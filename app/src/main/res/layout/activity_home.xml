@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:background="@android:color/white"
         >
-        <com.example.myapplication.models.CoronaAnimationView
+        <com.example.myapplication.views.CoronaAnimationView
             android:id="@+id/animated_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -45,6 +45,7 @@
         android:background="@drawable/play_solo"
         />
     <!-- macrophage 1 -->
+    <!---
     <View
         android:id="@+id/macrophage_"
         android:layout_width="300dp"
@@ -54,7 +55,9 @@
         android:layout_marginLeft="-30dp"
         android:background="@drawable/macrophage"
         />
+        -->
     <!-- tcell 1 -->
+    <!--
     <View
         android:id="@+id/tcell_1"
         android:layout_width="375dp"
@@ -64,6 +67,7 @@
         android:layout_marginBottom="60dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/tcell1" />
+        -->
     <View
         android:id="@+id/coronacorne"
         android:layout_width="200dp"

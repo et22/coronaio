@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:background="@android:color/white"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/button_home"
+        android:layout_width="334dp"
+        android:layout_height="91dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="476dp"
+        android:layout_marginEnd="27dp"
+        android:background="@drawable/won_score"
+        android:ems="10"
+        android:translationZ="11dp" />
+
+    <TextView
+        android:id="@+id/score_text_view"
+        android:layout_width="334dp"
+        android:layout_height="91dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="230dp"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:text="0"
+        android:gravity="center"
+        android:layout_marginEnd="33dp"
+        android:ems="10" />
+
+    <View
+        android:id="@+id/win_score_text_view"
+        android:layout_width="237dp"
+        android:layout_height="121dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="81dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="85dp"
+        android:background="@drawable/play_again"
+        android:ems="10"
+        android:translationZ="13dp" />
+
+    <Button
+        android:id="@+id/button_play_again"
+        android:layout_width="279dp"
+        android:layout_height="84dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="378dp"
+        android:layout_marginEnd="57dp"
+        android:background="@drawable/back_home"
+        android:ems="10"
+        android:translationZ="11dp" />
+</RelativeLayout>

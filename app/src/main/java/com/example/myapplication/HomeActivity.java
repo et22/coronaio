@@ -11,11 +11,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.myapplication.adapters.BNViewPagerAdapter;
-import com.example.myapplication.models.CoronaAnimationView;
+import com.example.myapplication.views.CoronaAnimationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
-import com.example.myapplication.adapters.BNViewPagerAdapter;
 
 public class HomeActivity extends AppCompatActivity {
     BottomNavigationView bottomNav;
@@ -46,14 +45,14 @@ public class HomeActivity extends AppCompatActivity {
         mPlaySolo = findViewById(R.id.button_play_solo);
 
         //hide action bar
-        //getSupportActionBar().hide();
+        getSupportActionBar().hide();
 
         //set action bar time
-        ActionBar actionBar = getSupportActionBar();
+        /*ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             this.setTitle("Home");
-        }
+        }*/
 
         //creating onclicks for ffa and solo
         onClickFFA();
