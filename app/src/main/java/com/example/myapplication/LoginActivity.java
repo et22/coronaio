@@ -1,22 +1,35 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private static final String TAG = "fire";
     private Button mSignIn, mCreateAccount;
     private EditText mEmail, mPassword;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //initialize firebase auth
+        mAuth = FirebaseAuth.getInstance();
 
         //initializing ui components
         mSignIn = findViewById(R.id.button_sign_in);
@@ -46,16 +59,34 @@ public class LoginActivity extends AppCompatActivity {
         mSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(userIsRegistered()){
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                }
+                userIsRegistered();
             }
         });
     }
 
-    private boolean userIsRegistered() {
-        //TODO: add firebase logic for checking if user is registered
-        return true;
+    private void userIsRegistered() {
+        //TODO: firebase logic for checking if user is registered
+        mAuth.signInWithEmailAndPassword(mEmail.getText().toString(), mPassword.getText().toString())
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+//                            FirebaseUser user = mAuth.getCurrentUser();
+//                            updateUI(user);
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+//                            updateUI(null);
+
+                        }
+                    }
+                });
+
     }
 }

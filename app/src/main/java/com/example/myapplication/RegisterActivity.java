@@ -1,12 +1,14 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -14,6 +16,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.farbod.labelledspinner.LabelledSpinner;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 /* RegisterActivity manages the registration and edit actions for corona.io.
@@ -23,15 +30,19 @@ import com.farbod.labelledspinner.LabelledSpinner;
  */
 
 public class RegisterActivity extends AppCompatActivity {
+    public static String TAG = "firebase2";
 
         private EditText mNameView, mEmailView, mPasswordView;
         private Spinner mCellType;
         private Button mRegisterButton;
+        private FirebaseAuth mAuth;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_register);
+            //Initialize Firebase Auth
+            mAuth = FirebaseAuth.getInstance();
 
             //Makes the toolbar visible
             //Toolbar toolbar = findViewById(R.id.app_bar);
@@ -64,7 +75,27 @@ public class RegisterActivity extends AppCompatActivity {
             mRegisterButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    finish();
+                    mAuth.createUserWithEmailAndPassword(mEmailView.getText().toString(),
+                            mPasswordView.getText().toString())
+                            .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d(TAG, "createUserWithEmail:success");
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        Log.d(TAG, "createUserWithEmail:failure", task.getException());
+                                        Toast.makeText(RegisterActivity.this, "Authentication worked.",
+                                                Toast.LENGTH_LONG).show();
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                        Toast.makeText(RegisterActivity.this, "Authentication failed: "
+                                                        + task.getException().getMessage(),
+                                                Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
                 }
             });
     }

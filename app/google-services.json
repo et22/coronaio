@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "488599488078",
+    "firebase_url": "https://coronaio.firebaseio.com",
+    "project_id": "coronaio",
+    "storage_bucket": "coronaio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488599488078:android:90caeb49107b60d65a651f",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488599488078-hn3v5on9astqk4afotd8mq3rulj17n7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYVCQ1fkI6HX6Kb7sNRu03pxtlhbMAt4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488599488078-hn3v5on9astqk4afotd8mq3rulj17n7s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
