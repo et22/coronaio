@@ -2117,6 +2117,8 @@ string hint_password
 string icon_content_description
 string invalid_password
 string invalid_username
+string login_error_message
+string login_error_title
 string login_failed
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
@@ -2165,6 +2167,8 @@ string prompt_email
 string prompt_password
 string score_text
 string search_menu_title
+string signup_error_message
+string signup_error_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
 string title_activity_login

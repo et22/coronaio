@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -75,8 +76,22 @@ public class RegisterActivity extends AppCompatActivity {
             mRegisterButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    mAuth.createUserWithEmailAndPassword(mEmailView.getText().toString(),
-                            mPasswordView.getText().toString())
+                    String password = mPasswordView.getText().toString();
+                    String email = mEmailView.getText().toString();
+
+                    password = password.trim();
+                    email = email.trim();
+
+                    if (password.isEmpty() || email.isEmpty()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                        builder.setMessage(R.string.signup_error_message)
+                                .setTitle(R.string.signup_error_title)
+                                .setPositiveButton(android.R.string.ok, null);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    } else {
+                    mAuth.createUserWithEmailAndPassword(email,
+                            password)
                             .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -87,6 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         Log.d(TAG, "createUserWithEmail:failure", task.getException());
                                         Toast.makeText(RegisterActivity.this, "Authentication worked.",
                                                 Toast.LENGTH_LONG).show();
+                                        finish();
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -96,6 +112,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     }
                                 }
                             });
+                    }
                 }
             });
     }
