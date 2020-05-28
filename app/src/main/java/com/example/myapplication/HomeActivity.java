@@ -13,6 +13,10 @@ import android.widget.Button;
 import com.example.myapplication.adapters.BNViewPagerAdapter;
 import com.example.myapplication.views.CoronaAnimationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -22,6 +26,8 @@ public class HomeActivity extends AppCompatActivity {
     ArrayList<Fragment> fragments;
     BNViewPagerAdapter bnViewPagerAdapter;
     private String TAG = "fragments";
+
+
 
     //animation
     private CoronaAnimationView mAnimationView;
@@ -57,6 +63,9 @@ public class HomeActivity extends AppCompatActivity {
         //creating onclicks for ffa and solo
         onClickFFA();
         onClickSolo();
+
+
+
         /*
         bottomNav = findViewById(R.id.navigation);
         viewPager = findViewById(R.id.view_pager);

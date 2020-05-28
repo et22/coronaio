@@ -19,11 +19,13 @@ MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradl
 MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\b2250d6351df54d89fb411725865672d\jetified-play-services-stats-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80dd1dc019436116365faa921b9a8769\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\b3eceaf6e5cc2df4bb865a5445be6293\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:15:1-38:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\0a5d1ddc01de78a90b6c8d414c9a6e9c\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\43eb2d2e7e68e27bf73363f2db15d7be\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a03af0ca606b0afbfb3b2e724fbbb37f\jetified-play-services-location-17.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f2ad40b7824eb372f4d8a9636d7e3bf4\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\68dd590321da53844fc859861b272820\jetified-firebase-auth-interop-19.0.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\fa3d7eac296077651560ac3933490b85\jetified-firebase-database-collection-17.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\69bb246ee492a12aa1da92077170be77\jetified-firebase-iid-interop-17.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80b5e92b70a89d4f419c7604b16b139f\jetified-firebase-installations-16.2.1\AndroidManifest.xml:2:1-23:12
@@ -114,6 +116,8 @@ MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradl
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:28:5-45:19
 MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\b2250d6351df54d89fb411725865672d\jetified-play-services-stats-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-stats:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\b2250d6351df54d89fb411725865672d\jetified-play-services-stats-17.0.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a03af0ca606b0afbfb3b2e724fbbb37f\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a03af0ca606b0afbfb3b2e724fbbb37f\jetified-play-services-location-17.0.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f2ad40b7824eb372f4d8a9636d7e3bf4\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:22:5-20
@@ -256,6 +260,8 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\GWC-NYC-1
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80dd1dc019436116365faa921b9a8769\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\b3eceaf6e5cc2df4bb865a5445be6293\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\b3eceaf6e5cc2df4bb865a5445be6293\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\0a5d1ddc01de78a90b6c8d414c9a6e9c\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\0a5d1ddc01de78a90b6c8d414c9a6e9c\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\43eb2d2e7e68e27bf73363f2db15d7be\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
@@ -266,6 +272,8 @@ MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\
 MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f2ad40b7824eb372f4d8a9636d7e3bf4\jetified-play-services-places-placereport-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\68dd590321da53844fc859861b272820\jetified-firebase-auth-interop-19.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\68dd590321da53844fc859861b272820\jetified-firebase-auth-interop-19.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\fa3d7eac296077651560ac3933490b85\jetified-firebase-database-collection-17.0.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\fa3d7eac296077651560ac3933490b85\jetified-firebase-database-collection-17.0.1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\69bb246ee492a12aa1da92077170be77\jetified-firebase-iid-interop-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\69bb246ee492a12aa1da92077170be77\jetified-firebase-iid-interop-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:20:5-44
@@ -368,6 +376,8 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:17.4.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1c7002b2ceb5b17a3c32bb893ea966d5\jetified-play-services-measurement-impl-17.4.2\AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80b5e92b70a89d4f419c7604b16b139f\jetified-firebase-installations-16.2.1\AndroidManifest.xml:10:5-79
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80b5e92b70a89d4f419c7604b16b139f\jetified-firebase-installations-16.2.1\AndroidManifest.xml:10:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\c3493537bf2a8ba64e4c25e0fc7fa531\jetified-play-services-measurement-sdk-api-17.4.2\AndroidManifest.xml:24:5-79
@@ -384,6 +394,8 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:17.4.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1c7002b2ceb5b17a3c32bb893ea966d5\jetified-play-services-measurement-impl-17.4.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80b5e92b70a89d4f419c7604b16b139f\jetified-firebase-installations-16.2.1\AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80b5e92b70a89d4f419c7604b16b139f\jetified-firebase-installations-16.2.1\AndroidManifest.xml:11:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\c3493537bf2a8ba64e4c25e0fc7fa531\jetified-play-services-measurement-sdk-api-17.4.2\AndroidManifest.xml:23:5-67
@@ -424,6 +436,8 @@ MERGED from [com.google.android.gms:play-services-measurement-api:17.4.2] C:\Use
 MERGED from [com.google.android.gms:play-services-measurement-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\edff0e3528fa996cba513a9034b94272\jetified-play-services-measurement-api-17.4.2\AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:29:9-35:19
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80b5e92b70a89d4f419c7604b16b139f\jetified-firebase-installations-16.2.1\AndroidManifest.xml:14:9-20:19
 MERGED from [com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\80b5e92b70a89d4f419c7604b16b139f\jetified-firebase-installations-16.2.1\AndroidManifest.xml:14:9-20:19
 MERGED from [com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\3deb10f8139ef5717b3d54ada2a19ca4\jetified-firebase-common-19.3.0\AndroidManifest.xml:32:9-36:35
@@ -516,6 +530,12 @@ action#com.google.android.c2dm.intent.RECEIVE
 ADDED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:42:17-81
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\8183980bc8e77d4fe843a9e6d0f0d6a0\jetified-firebase-iid-20.1.5\AndroidManifest.xml:42:25-78
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\a858482f0d85511048b88d680e761880\jetified-firebase-database-19.3.0\AndroidManifest.xml:33:17-109
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\75e7c473eccef2b3a0eec97fa3a7825b\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 	android:exported

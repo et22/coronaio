@@ -60,12 +60,12 @@ public class LoginActivity extends AppCompatActivity {
         mSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                userIsRegistered();
+                registerUser();
             }
         });
     }
 
-    private void userIsRegistered() {
+    private void registerUser() {
         //TODO: firebase logic for checking if user is registered
 
         String email = mEmail.getText().toString();
@@ -89,8 +89,6 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d(TAG, "signInWithEmail:success");
-//                            FirebaseUser user = mAuth.getCurrentUser();
-//                            updateUI(user);
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(intent);
                             } else {
@@ -98,7 +96,6 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.w(TAG, "signInWithEmail:failure", task.getException());
                                 Toast.makeText(LoginActivity.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
-//                            updateUI(null);
 
                             }
                         }

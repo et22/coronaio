@@ -22,4 +22,5 @@
     <string name="login_error_title">Error</string>
     <string name="signup_error_message">Please make sure you enter an email and password</string>
     <string name="signup_error_title">Error!</string>
+    <string name="userName_error_message">Please enter a username</string>
 </resources>

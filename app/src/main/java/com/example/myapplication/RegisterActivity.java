@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 /* RegisterActivity manages the registration and edit actions for corona.io.
@@ -37,6 +39,9 @@ public class RegisterActivity extends AppCompatActivity {
         private Spinner mCellType;
         private Button mRegisterButton;
         private FirebaseAuth mAuth;
+        private FirebaseUser mFirebaseUser;
+        private DatabaseReference mDatabase;
+        private String mUserId;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +83,23 @@ public class RegisterActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     String password = mPasswordView.getText().toString();
                     String email = mEmailView.getText().toString();
+                    final String userName = mNameView.getText().toString().trim();
 
                     password = password.trim();
                     email = email.trim();
 
+
                     if (password.isEmpty() || email.isEmpty()) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                         builder.setMessage(R.string.signup_error_message)
+                                .setTitle(R.string.signup_error_title)
+                                .setPositiveButton(android.R.string.ok, null);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
+                    if(userName.isEmpty()){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                        builder.setMessage(R.string.userName_error_message)
                                 .setTitle(R.string.signup_error_title)
                                 .setPositiveButton(android.R.string.ok, null);
                         AlertDialog dialog = builder.create();
@@ -96,9 +111,16 @@ public class RegisterActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information
+                                        // Sign in success, save the user's username and cellType
                                         Log.d(TAG, "createUserWithEmail:success");
-                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        mFirebaseUser = mAuth.getCurrentUser();
+                                        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+                                        mUserId = mFirebaseUser.getUid();
+
+                                        mDatabase.child("users").child(mUserId).child("userName").push().setValue(userName);
+                                        mDatabase.child("users").child(mUserId).child("cellType").push().setValue(mCellType.getSelectedItem().toString());
+
                                         Log.d(TAG, "createUserWithEmail:failure", task.getException());
                                         Toast.makeText(RegisterActivity.this, "Authentication worked.",
                                                 Toast.LENGTH_LONG).show();
