@@ -8,6 +8,7 @@ public class Player {
     public float speed;
     public int score;
     public int cellType;
+    public String userid;
     public long spawnTime;
 
     public Player() {
@@ -17,5 +18,6 @@ public class Player {
         score = 0;
         cellType = 0;
         spawnTime = 0;
+        userid="";
     }
 }

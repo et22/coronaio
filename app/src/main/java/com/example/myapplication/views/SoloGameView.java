@@ -218,7 +218,7 @@ public class SoloGameView extends View {
         super.onAttachedToWindow();
         serviceIntent = new Intent(getContext(), TrackingService.class);
         Log.d("gps", "3");
-        getContext().startForegroundService(serviceIntent);
+        getContext().startService(serviceIntent);
         mapsActivity = (MapsActivity) getContext();
         LocalBroadcastManager.getInstance(mapsActivity).registerReceiver(mLocationBroadcast,
                 new IntentFilter(Constants.BROADCAST_LOCATION));

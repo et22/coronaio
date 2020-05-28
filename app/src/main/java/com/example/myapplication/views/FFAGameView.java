@@ -34,6 +34,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 
 
@@ -68,7 +69,8 @@ public class FFAGameView extends View {
     private Point playerScreenLocation=null;
     private Point previousScreenLocation=null;
     private Context soloContext;
-    private ArrayList<Player> mPlayers = new ArrayList<Player>();;
+    private ArrayList<Player> mPlayers = new ArrayList<Player>();
+    private HashSet<String> haveEaten = new HashSet<String>();
 
     //old animation instance variables
     private static final int BASE_SPEED_DP_PER_S = 0;
@@ -179,7 +181,7 @@ public class FFAGameView extends View {
             canvas.restoreToCount(save);
         }
         for(Player player: mPlayers){
-
+            drawOtherPlayerHelper(canvas, viewHeight, player);
         }
     }
 
@@ -234,7 +236,7 @@ public class FFAGameView extends View {
         super.onAttachedToWindow();
         serviceIntent = new Intent(getContext(), TrackingService.class);
         Log.d("gps", "3");
-        getContext().startForegroundService(serviceIntent);
+        getContext().startService(serviceIntent);
         mapsActivity = (MapsActivity) getContext();
         LocalBroadcastManager.getInstance(mapsActivity).registerReceiver(mLocationBroadcast,
                 new IntentFilter(Constants.BROADCAST_LOCATION));
@@ -372,25 +374,42 @@ public class FFAGameView extends View {
             //update player position in the database
             reference.child("ffa").child(currentuser).setValue(player);
 
-            //check for intersection
+            //check for intersection with virus
             int count = 0;
+            final float size = player.scale * mBaseSize;
             for (final Corona Corona : mCoronas) {
                 count++;
-                final float size = player.scale * mBaseSize;
                 if(player.x+size>Corona.x&&player.x-size<Corona.x&&player.y+size>Corona.y&&player.y-size<Corona.y){
                     if(Corona.alpha!=0.0) {
                         Corona.alpha = 0;
                         player.score += 1;
-                        player.scale += .2;
+                        player.scale += .1;
                         //update score textview
                         Log.d("TAGTAGGAT", ""+player.score);
                         mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text)+ player.score);
                         //check if Got all 32 viruses
-                        if(player.score>=COUNT){
+                       /* if(player.score>=COUNT){
                             Intent intent = new Intent(mapsActivity, GameOver.class);
                             intent.putExtra(Constants.SCORE_EXTRA, player.score);
                             onDetachedFromWindow();
                             soloContext.startActivity(intent);
+                        }*/
+                    }
+                }
+            }
+            //check intersection with other player
+            for(Player otherPlayer: mPlayers){
+                if(player.x+size>otherPlayer.x&&player.x-size<otherPlayer.x&&player.y+size>otherPlayer.y&&player.y-size<otherPlayer.y) {
+                    if(otherPlayer.scale>player.scale){
+                        Intent intent = new Intent(mapsActivity, GameOver.class);
+                        intent.putExtra(Constants.SCORE_EXTRA, player.score);
+                        onDetachedFromWindow();
+                        soloContext.startActivity(intent);
+                    }
+                    else if (otherPlayer.scale<player.scale){
+                        if(!haveEaten.contains(otherPlayer.userid)) {
+                            player.scale += otherPlayer.scale / 2;
+                            haveEaten.add(otherPlayer.userid);
                         }
                     }
                 }
@@ -447,8 +466,8 @@ public class FFAGameView extends View {
         player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
         // The bigger and brighter a Corona is, the faster it moves
         player.speed = mBaseSpeed * player.alpha * player.scale;
+        player.userid = currentuser;
         reference.child("ffa").child(currentuser).setValue(player);
-
         //update player score on the screen
         mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text) + player.score);
     }
