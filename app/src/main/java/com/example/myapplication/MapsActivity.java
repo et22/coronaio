@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.example.myapplication.loaders.TrackingService;
 import com.example.myapplication.utils.Constants;
 import com.example.myapplication.views.CoronaAnimationView;
+import com.example.myapplication.views.FFAGameView;
 import com.example.myapplication.views.SoloGameView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -33,9 +34,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public GoogleMap mMap;
     private int PERMISSION_REQUEST_CODE = 1;
-    private SoloGameView mAnimationView;
     public TextView mScoreTextView;
     public TextView mLeaderBoard;
+    public String from;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        from = getIntent().getStringExtra("GameType");
         //instantiate text views
         mScoreTextView = findViewById(R.id.score_text_view);
         mLeaderBoard = findViewById(R.id.leaderboard_text);
@@ -60,7 +62,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if (!checkPermission())
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
         else
-            mAnimationView = (SoloGameView) findViewById(R.id.animated_view);
+            startAnimation();
+    }
+
+    private void startAnimation(){
+        if(from.equals("FFA")){
+            FFAGameView mAnimationView= (FFAGameView) findViewById(R.id.ffa_animated_view);
+        }
+        else if(from.equals("Solo")){
+            SoloGameView mAnimationView = (SoloGameView) findViewById(R.id.solo_animated_view);
+        }
     }
 
     //starts location tracking service
@@ -76,7 +87,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            mAnimationView = (SoloGameView) findViewById(R.id.animated_view);
+            startAnimation();
         } else {
             finish();
         }

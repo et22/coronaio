@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.example.myapplication.GameOver;
@@ -34,12 +35,19 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.myapplication.R;
 import com.example.myapplication.loaders.TrackingService;
+import com.example.myapplication.models.Player;
 import com.example.myapplication.utils.Constants;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.maps.model.VisibleRegion;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
@@ -48,6 +56,7 @@ import java.util.Random;
  * Solo Game Animation
  * */
 public class SoloGameView extends View {
+
 
     /**
      * Class representing the state of a Corona
@@ -60,16 +69,6 @@ public class SoloGameView extends View {
         private float speed;
     }
 
-    private static class Player {
-        private float x;
-        private float y;
-        private float scale;
-        private float alpha;
-        private float speed;
-        private int score;
-        private int cellType;
-        private long spawnTime;
-    }
 
     //new game instance variables
     private Intent serviceIntent;
@@ -223,6 +222,7 @@ public class SoloGameView extends View {
         mapsActivity = (MapsActivity) getContext();
         LocalBroadcastManager.getInstance(mapsActivity).registerReceiver(mLocationBroadcast,
                 new IntentFilter(Constants.BROADCAST_LOCATION));
+        //set up time animation
         mTimeAnimator = new TimeAnimator();
         mTimeAnimator.setTimeListener(new TimeAnimator.TimeListener() {
             @Override
@@ -236,6 +236,7 @@ public class SoloGameView extends View {
             }
         });
         mTimeAnimator.start();
+
     }
 
     BroadcastReceiver mLocationBroadcast = new BroadcastReceiver() {
@@ -402,9 +403,9 @@ public class SoloGameView extends View {
         player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
         // The bigger and brighter a Corona is, the faster it moves
         player.speed = mBaseSpeed * player.alpha * player.scale;
-
         //update player score on the screen
         mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text) + player.score);
     }
+
 }
 

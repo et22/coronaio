@@ -99,6 +99,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
+                intent.putExtra("GameType", "Solo");
                 startActivity(intent);
             }
         });
@@ -109,6 +110,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
+                intent.putExtra("GameType", "FFA");
                 startActivity(intent);
             }
         });

@@ -1,8 +1,5 @@
 package com.example.myapplication.loaders;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
@@ -35,8 +32,6 @@ public class TrackingService extends Service {
     //TODO automatic variables for automatic
     private PendingIntent mPendingIntent;
     private ActivityRecognitionClient mActivityRecognitionClient;
-    private static final int SERVICE_NOTIFICATION_ID = -1;
-    private NotificationManager notificationManager;
 
     public static ArrayList<LocationResult> locationUpdates = new ArrayList<>();
 
@@ -98,16 +93,16 @@ public class TrackingService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
         //TODO automatic
-        if(intent.getIntExtra(Constants.REQUEST_ACTIVITY, 0) == Constants.ACTIVITY_RECOGNITION){
+      /*  if(intent.getIntExtra(Constants.REQUEST_ACTIVITY, 0) == Constants.ACTIVITY_RECOGNITION){
             Log.d("TrackingService", "herere");
             // We initialize the variables we need to "requestActivityUpdates"
             mActivityRecognitionClient = new ActivityRecognitionClient(this);
             Intent mIntentService = new Intent(this, DetectedActivityIntentService.class);
             mPendingIntent = PendingIntent.getService(this, 1, mIntentService, PendingIntent.FLAG_UPDATE_CURRENT);
             requestActivityUpdatesHandler();
-        }
+        }*/
 
-        createNotification(intent);
+        //createNotification(intent);
         return START_STICKY;
     }
 
@@ -139,42 +134,8 @@ public class TrackingService extends Service {
     }
 
 
-    private void createNotification(Intent intent){
-        Intent notificationIntent = new Intent(this, MapsActivity.class);
-        if(intent.getIntExtra(Constants.REQUEST_ACTIVITY, 0) == Constants.ACTIVITY_RECOGNITION){
-            //notificationIntent.putExtra(MapsActivity.INPUT_TYPE, MapsActivity.AUTO_INPUT_TYPE);
-        }
-        else {
-            //notificationIntent.putExtra(MapsActivity.INPUT_TYPE, MapsActivity.GPS_INPUT_TYPE);
-        }
-        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-
-        //notificationIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-
-        //create notification and its channel
-        notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-
-        String channelId = "Tracking";
-        String channelName = "MyRuns";
-
-        NotificationChannel channel = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_HIGH);
-        notificationManager.createNotificationChannel(channel);
-
-        Notification notification = new Notification.Builder(this, channelId)
-                .setContentTitle("MyRuns")
-                .setContentText("Tracking your locations")
-                .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setOngoing(true)
-                .setContentIntent(pendingIntent)
-                .build();
-
-        startForeground(SERVICE_NOTIFICATION_ID, notification);
-    }
-
     @Override
     public void onDestroy() {
-        notificationManager.cancelAll();
         super.onDestroy();
         //TODO automatic
         // need to remove the request to Google play services. Brings down the connection.
