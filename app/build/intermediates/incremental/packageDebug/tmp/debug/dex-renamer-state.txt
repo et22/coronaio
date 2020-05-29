@@ -1,7 +1,13 @@
-#Thu May 28 16:56:19 CDT 2020
-base.0=C\:\\Users\\ebtbl\\OneDrive\\Desktop\\coronaio\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Thu May 28 21:45:09 EDT 2020
+path.3=classes.dex
+path.2=classes.dex
 path.1=classes.dex
-renamed.1=classes2.dex
 path.0=classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+base.3=C\:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.2=C\:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 base.1=C\:\\Users\\ebtbl\\OneDrive\\Desktop\\coronaio\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=C\:\\Users\\ebtbl\\OneDrive\\Desktop\\coronaio\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex

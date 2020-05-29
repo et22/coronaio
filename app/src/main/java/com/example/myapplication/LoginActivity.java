@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapplication.database.FirebaseHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "fire";
     private Button mSignIn, mCreateAccount;
     private EditText mEmail, mPassword;
+    private FirebaseHelper firebaseHelper;
     private FirebaseAuth mAuth;
 
     @Override
@@ -31,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //initialize firebase auth
         mAuth = FirebaseAuth.getInstance();
+        firebaseHelper = new FirebaseHelper();
 
         //initializing ui components
         mSignIn = findViewById(R.id.button_sign_in);
@@ -60,12 +63,12 @@ public class LoginActivity extends AppCompatActivity {
         mSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                registerUser();
+                signInUser();
             }
         });
     }
 
-    private void registerUser() {
+    private void signInUser() {
         //TODO: firebase logic for checking if user is registered
 
         String email = mEmail.getText().toString();
@@ -82,24 +85,13 @@ public class LoginActivity extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
         } else {
-            mAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "signInWithEmail:success");
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                startActivity(intent);
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
-
-                            }
-                        }
-                    });
+            if(firebaseHelper.isSignedIn(email, password, LoginActivity.this)){
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(LoginActivity.this, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
 
     }

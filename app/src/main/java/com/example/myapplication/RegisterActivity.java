@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.myapplication.database.FirebaseHelper;
 import com.farbod.labelledspinner.LabelledSpinner;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -33,11 +34,12 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 
 public class RegisterActivity extends AppCompatActivity {
-    public static String TAG = "firebase2";
+
 
         private EditText mNameView, mEmailView, mPasswordView;
         private Spinner mCellType;
         private Button mRegisterButton;
+        private FirebaseHelper firebaseHelper;
         private FirebaseAuth mAuth;
         private FirebaseUser mFirebaseUser;
         private DatabaseReference mDatabase;
@@ -48,7 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_register);
             //Initialize Firebase Auth
-            mAuth = FirebaseAuth.getInstance();
+            //mAuth = FirebaseAuth.getInstance();
+            firebaseHelper = new FirebaseHelper();
 
             //Makes the toolbar visible
             //Toolbar toolbar = findViewById(R.id.app_bar);
@@ -88,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                     password = password.trim();
                     email = email.trim();
 
-
+                    // If email and password are empty we prompt the user to fill in the fields
                     if (password.isEmpty() || email.isEmpty()) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                         builder.setMessage(R.string.signup_error_message)
@@ -97,6 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     }
+                    // if username is empty we prompt user to fill out the field
                     if(userName.isEmpty()){
                         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                         builder.setMessage(R.string.userName_error_message)
@@ -105,35 +109,18 @@ public class RegisterActivity extends AppCompatActivity {
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     } else {
-                    mAuth.createUserWithEmailAndPassword(email,
-                            password)
-                            .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, save the user's username and cellType
-                                        Log.d(TAG, "createUserWithEmail:success");
-                                        mFirebaseUser = mAuth.getCurrentUser();
-                                        mDatabase = FirebaseDatabase.getInstance().getReference();
+                        String result = firebaseHelper.addNewUser(email, password, userName, mCellType.getSelectedItemPosition(), RegisterActivity.this);
+                        // If user is successfully registered, we lead them to loginActivity
+                        if(result.equals("success")){
+                            Toast.makeText(RegisterActivity.this, "Authentication worked.",
+                                    Toast.LENGTH_LONG).show();
+                            finish();
+                        }else{
+                            Toast.makeText(RegisterActivity.this, "Authentication failed: "
+                                            + result,
+                                    Toast.LENGTH_LONG).show();
+                        }
 
-                                        mUserId = mFirebaseUser.getUid();
-
-                                        mDatabase.child("users").child(mUserId).child("userName").push().setValue(userName);
-                                        mDatabase.child("users").child(mUserId).child("cellType").push().setValue(mCellType.getSelectedItem().toString());
-
-                                        Log.d(TAG, "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(RegisterActivity.this, "Authentication worked.",
-                                                Toast.LENGTH_LONG).show();
-                                        finish();
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-                                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(RegisterActivity.this, "Authentication failed: "
-                                                        + task.getException().getMessage(),
-                                                Toast.LENGTH_LONG).show();
-                                    }
-                                }
-                            });
                     }
                 }
             });
