@@ -403,12 +403,15 @@ public class FFAGameView extends View {
                     if(otherPlayer.scale>player.scale){
                         Intent intent = new Intent(mapsActivity, GameOver.class);
                         intent.putExtra(Constants.SCORE_EXTRA, player.score);
+                        intent.putExtra("GameType", "FFA");
                         onDetachedFromWindow();
                         soloContext.startActivity(intent);
                     }
                     else if (otherPlayer.scale<player.scale){
                         if(!haveEaten.contains(otherPlayer.userid)) {
                             player.scale += otherPlayer.scale / 2;
+                            player.score += 4;
+                            player.score += otherPlayer.score/2;
                             haveEaten.add(otherPlayer.userid);
                         }
                     }

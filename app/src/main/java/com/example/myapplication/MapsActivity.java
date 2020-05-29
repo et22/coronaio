@@ -15,6 +15,10 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.myapplication.loaders.TrackingService;
@@ -36,22 +40,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private int PERMISSION_REQUEST_CODE = 1;
     public TextView mScoreTextView;
     public TextView mLeaderBoard;
+    public Button mQuitButton;
     public String from;
+    private FrameLayout animationLayout;
+    private View animationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        from = getIntent().getStringExtra("GameType");
+        if(from.equals("Solo"))
+            setContentView(R.layout.activity_maps);
+        else
+            setContentView(R.layout.activity_maps1);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        from = getIntent().getStringExtra("GameType");
         //instantiate text views
         mScoreTextView = findViewById(R.id.score_text_view);
         mLeaderBoard = findViewById(R.id.leaderboard_text);
+        mQuitButton = findViewById(R.id.quit_button);
 
+        //mQuitButton oncli
+        mQuitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    onDestroy();
+                    //Intent intent = new Intent(MapsActivity.this, HomeActivity.class);
+                    //startActivity(intent);
+            }
+        });
+        //
         createTrackingService();
     }
 
@@ -67,13 +88,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void startAnimation(){
         if(from.equals("FFA")){
-            FFAGameView mAnimationView= (FFAGameView) findViewById(R.id.ffa_animated_view);
+            //FFAGameView mAnimationView= (FFAGameView) findViewById(R.id.ffa_animated_view);
         }
         else if(from.equals("Solo")){
-            SoloGameView mAnimationView = (SoloGameView) findViewById(R.id.solo_animated_view);
+            mLeaderBoard.setText("");
+            mScoreTextView.setText("Score");
+            animationView = (SoloGameView) findViewById(R.id.solo_animated_view);
         }
     }
-
+    @Override
+    protected void onDestroy()
+    {
+        animationLayout.removeView(animationView);
+        super.onDestroy();
+    }
     //starts location tracking service
     /**
      * Check location tracking permissions

@@ -1527,11 +1527,15 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable play
 drawable play_again
 drawable play_ffa
 drawable play_solo
 drawable preference_list_divider_material
+drawable quit
+drawable settings
 drawable signin
+drawable stats
 drawable tcell1
 drawable test_custom_background
 drawable title
@@ -1774,6 +1778,7 @@ id percent
 id pin
 id progress_circular
 id progress_horizontal
+id quit_button
 id radio
 id recycler_view
 id registration_text
@@ -1947,6 +1952,7 @@ layout activity_game_over
 layout activity_home
 layout activity_login
 layout activity_maps
+layout activity_maps1
 layout activity_register
 layout activity_settings
 layout app_bar
@@ -2119,6 +2125,7 @@ string hint_password
 string icon_content_description
 string invalid_password
 string invalid_username
+string leaderboard
 string login_error_message
 string login_error_title
 string login_failed

@@ -155,7 +155,7 @@ public class SoloGameView extends View {
         //drawing the player at current Location
         if(player!=null){
             drawPlayerHelper(canvas, viewHeight);
-            Log.d("TAGTAGTAG", "drewPlayer");
+            Log.d("123TAGTAGTAG", "drewPlayer");
         }
         for (final Corona Corona : mCoronas) {
             // Ignore the Corona if it's outside of the view bounds
@@ -236,7 +236,6 @@ public class SoloGameView extends View {
             }
         });
         mTimeAnimator.start();
-
     }
 
     BroadcastReceiver mLocationBroadcast = new BroadcastReceiver() {
@@ -265,10 +264,12 @@ public class SoloGameView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mTimeAnimator.cancel();
-        mTimeAnimator.setTimeListener(null);
-        mTimeAnimator.removeAllListeners();
-        mTimeAnimator = null;
+        if(mTimeAnimator!=null) {
+            mTimeAnimator.cancel();
+            mTimeAnimator.setTimeListener(null);
+            mTimeAnimator.removeAllListeners();
+            mTimeAnimator = null;
+        }
     }
 
     /**
@@ -341,11 +342,13 @@ public class SoloGameView extends View {
                         player.scale += .2;
                         //update score textview
                         Log.d("TAGTAGGAT", ""+player.score);
-                        mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text)+ player.score);
+                        mapsActivity.mScoreTextView.setText(new StringBuilder().append(getResources().getString(R.string.score_text)).append(player.score).toString());
                         //check if Got all 32 viruses
                         if(player.score>=COUNT){
                             Intent intent = new Intent(mapsActivity, GameOver.class);
                             intent.putExtra(Constants.SCORE_EXTRA, player.score);
+                            intent.putExtra("GameType", "Solo");
+                            onDetachedFromWindow();
                             soloContext.startActivity(intent);
                         }
                     }
@@ -404,7 +407,7 @@ public class SoloGameView extends View {
         // The bigger and brighter a Corona is, the faster it moves
         player.speed = mBaseSpeed * player.alpha * player.scale;
         //update player score on the screen
-        mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text) + player.score);
+        mapsActivity.mScoreTextView.setText(new StringBuilder().append(getResources().getString(R.string.score_text)).append(player.score).toString());
     }
 
 }

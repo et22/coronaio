@@ -46,6 +46,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         mAnimationView = (CoronaAnimationView) findViewById(R.id.animated_view);
 
+        //bottomNav comp
+        bottomNav = findViewById(R.id.navigation);
+        bottomNav.setItemIconTintList(null);
         //initializing ui components
         mPlayFFA = findViewById(R.id.button_play_ffa);
         mPlaySolo = findViewById(R.id.button_play_solo);
