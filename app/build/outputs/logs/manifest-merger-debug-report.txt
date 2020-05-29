@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\6029c1862846be4a7ec1743d4d20ec64\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.farbod.labelledspinner:labelledspinner:1.1.5] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\db35a99ba43256f66a2d71d7567c2718\jetified-labelledspinner-1.1.5\AndroidManifest.xml:17:1-29:12
 MERGED from [androidx.preference:preference:1.1.1] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\565a654bbb2b5f3b0fc6cf5f7ec67c15\preference-1.1.1\AndroidManifest.xml:17:1-24:12
@@ -67,33 +67,35 @@ MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ebtbl\.gradle\cache
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\4b17712f17b32f24acf8ec9de6f31f74\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\b6f43387dd7e9eafec00725aa0944ecc\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\eea79921d0082cd3162f25540a57b311\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
 	package
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:3:5-40
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:4:5-40
 		INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
 		INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:1-64:12
 		INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:2:11-69
+	xmlns:map
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:3:5-60
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:9:5-79
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:9:22-76
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:10:22-76
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:10:5-77
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:11:5-77
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:10:22-74
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:11:22-74
 application
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:12:5-57:19
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:13:5-62:19
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\6029c1862846be4a7ec1743d4d20ec64\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\6029c1862846be4a7ec1743d4d20ec64\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.farbod.labelledspinner:labelledspinner:1.1.5] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\db35a99ba43256f66a2d71d7567c2718\jetified-labelledspinner-1.1.5\AndroidManifest.xml:27:5-20
@@ -155,77 +157,85 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ebtbl\.g
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\bcfc0b80df78591183083cc148e1cf2c\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:18:9-35
 	android:label
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:16:9-41
 	android:roundIcon
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:16:9-54
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:17:9-54
 	android:icon
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:14:9-43
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:14:9-35
 	android:theme
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:18:9-40
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:19:9-40
 activity#com.example.myapplication.GameOver
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:19:9-21:20
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:20:9-22:20
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:20:13-37
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:21:13-37
 activity#com.example.myapplication.RegisterActivity
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:22:9-25:68
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:23:9-26:68
 	android:parentActivityName
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:24:13-56
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:25:13-56
 	android:windowSoftInputMode
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:25:13-65
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:26:13-65
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:23:13-45
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:24:13-45
 activity#com.example.myapplication.HomeActivity
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:26:9-50
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:27:9-50
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:26:19-47
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:27:19-47
 activity#com.example.myapplication.SettingsActivity
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:27:9-30:59
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:28:9-31:59
 	android:parentActivityName
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:30:13-56
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:31:13-56
 	android:label
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:29:13-37
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:30:13-37
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:28:13-45
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:29:13-45
 activity#com.example.myapplication.LoginActivity
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:31:9-37:20
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:32:9-38:20
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:31:19-48
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:32:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:32:13-36:29
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:33:13-37:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:35:17-77
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:35:27-74
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:36:27-74
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:46:9-48:55
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:47:9-49:55
 	android:value
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:48:13-52
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:49:13-52
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:47:13-58
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:48:13-58
 activity#com.example.myapplication.MapsActivity
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:50:9-53:68
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:51:9-58:68
 	android:label
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:53:13-56
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:58:13-56
+	map:uiScrollGestures
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:55:13-40
+	map:uiZoomGestures
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:57:13-39
+	map:uiTiltGestures
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:56:13-39
+	map:uiRotateGestures
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:54:13-41
 	android:theme
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:52:13-60
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:53:13-60
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:51:13-41
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:52:13-41
 service#com.example.myapplication.loaders.TrackingService
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:55:9-60
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:60:9-60
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:55:18-57
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:60:18-57
 service#com.example.myapplication.loaders.LocationIntentService
-ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:56:9-66
+ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:61:9-66
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:56:18-63
+		ADDED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml:61:18-63
 uses-sdk
 INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ebtbl\OneDrive\Desktop\coronaio\app\src\main\AndroidManifest.xml

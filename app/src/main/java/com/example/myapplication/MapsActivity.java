@@ -67,9 +67,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mQuitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    onDestroy();
-                    //Intent intent = new Intent(MapsActivity.this, HomeActivity.class);
-                    //startActivity(intent);
+                if(animationView!=null&&animationLayout!=null)
+                    animationLayout.removeView(animationView);
+                    Intent intent = new Intent(MapsActivity.this, HomeActivity.class);
+                    startActivity(intent);
             }
         });
         //
@@ -87,8 +88,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void startAnimation(){
+        Log.d("fromTag", from);
         if(from.equals("FFA")){
-            //FFAGameView mAnimationView= (FFAGameView) findViewById(R.id.ffa_animated_view);
+            animationView= (FFAGameView) findViewById(R.id.ffa_animated_view);
         }
         else if(from.equals("Solo")){
             mLeaderBoard.setText("");
@@ -99,7 +101,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onDestroy()
     {
-        animationLayout.removeView(animationView);
+
         super.onDestroy();
     }
     //starts location tracking service
