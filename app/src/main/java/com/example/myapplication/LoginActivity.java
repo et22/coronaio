@@ -83,7 +83,9 @@ public class LoginActivity extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
         } else {
-            if(firebaseHelper.isSignedIn(email, password, LoginActivity.this)){
+            boolean test = firebaseHelper.isSignedIn(email, password, LoginActivity.this);
+            if(test){
+
                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                 startActivity(intent);
             }else{
