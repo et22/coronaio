@@ -17,10 +17,11 @@
     <string name="email_address">Email address</string>
     <string name="hint_password">Password</string>
     <string name="cell_type_text">Choose your default cell type below, you can always change it later!</string>
-    <string name="score_text">Score:</string>
+    <string name="score_text">Score: </string>
     <string name="login_error_message">Please make sure you enter an email and password</string>
     <string name="login_error_title">Error</string>
     <string name="signup_error_message">Please make sure you enter an email and password</string>
     <string name="signup_error_title">Error!</string>
     <string name="userName_error_message">Please enter a username</string>
+    <string name="leaderboard">Leaderboard:</string>
 </resources>

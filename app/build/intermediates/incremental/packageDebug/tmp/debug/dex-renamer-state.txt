@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 #Thu May 28 21:45:09 EDT 2020
 path.3=classes.dex
 path.2=classes.dex
+=======
+#Thu May 28 21:13:21 CDT 2020
+base.0=C\:\\Users\\ebtbl\\OneDrive\\Desktop\\coronaio\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+>>>>>>> ae44e16fb3042cb9c9ee9d86e9c82a6d1b80b83a
 path.1=classes.dex
 path.0=classes.dex
 renamed.3=classes4.dex

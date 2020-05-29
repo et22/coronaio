@@ -8,15 +8,12 @@
     <androidx.fragment.app.FragmentContainerView
             xmlns:map="http://schemas.android.com/apk/res-auto"
             android:id="@+id/map"
-            map:uiRotateGestures="false"
-            map:uiScrollGestures="true"
-            map:uiTiltGestures="false"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             map:uiZoomGestures="false"
             tools:context=".MapsActivity" />
-    <FrameLayout
+    <!--<FrameLayout
         android:id="@+id/solo_animated_view_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,8 +26,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="top|center_horizontal"
             android:translationZ="11dp" />
-    </FrameLayout>
-    <!--<FrameLayout
+    </FrameLayout>-->
+    <FrameLayout
         android:id="@+id/ffa_animated_view_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +41,7 @@
             android:layout_alignParentTop="true"
             android:layout_gravity="top|center_horizontal"
             android:translationZ="11dp" />
-    </FrameLayout>-->
+    </FrameLayout>
 
 
     <LinearLayout

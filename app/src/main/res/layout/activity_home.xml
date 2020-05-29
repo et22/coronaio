@@ -86,7 +86,8 @@
         app:menu="@menu/bottom_nav"
         android:translationZ="13dp"
         android:background="@android:color/white"
-        app:itemIconTint="@color/colorPrimaryDark"
-        app:itemTextColor="@color/colorPrimaryDark">
+        app:itemIconSize="90dp"
+        app:itemIconTint="@null"
+        app:labelVisibilityMode="unlabeled">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>
