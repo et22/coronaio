@@ -250,7 +250,14 @@ public class SoloGameView extends View {
                 LatLng here = new LatLng(squoPlayerLocation.getLatitude(), squoPlayerLocation.getLongitude());
                 if(firstIter) {
                     mapsActivity.mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(here, 19));
+                    mapsActivity.mMap.getUiSettings().setZoomGesturesEnabled(false);
+                    mapsActivity.mMap.getUiSettings().setRotateGesturesEnabled(false);
+                    mapsActivity.mMap.getUiSettings().setTiltGesturesEnabled(false);
+                    mapsActivity.mMap.getUiSettings().setScrollGesturesEnabled(false);
+                    player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
                     visibleRegion = mapsActivity.mMap.getProjection().getVisibleRegion();
+                    for(Corona Corona: mCoronas)
+                        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
                 }
                 Log.d("TAGTAGTAG", "herher");
                 if(playerScreenLocation!=null){
@@ -381,7 +388,7 @@ public class SoloGameView extends View {
         //Corona.y += viewHeight * mRnd.nextFloat() / 4f;
 
         // The alpha is determined by the scale of the Corona and a random multiplier.
-        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+        Corona.alpha = 0;
         // The bigger and brighter a Corona is, the faster it moves
         Corona.speed = mBaseSpeed * Corona.alpha * Corona.scale;
     }
@@ -389,25 +396,27 @@ public class SoloGameView extends View {
     private void initializePlayer(Player player, int viewWidth, int viewHeight) {
         player.scale = SCALE_MIN_PART + SCALE_RANDOM_PART;
         // Set X to a random value within the width of the view
-        player.x = viewWidth * mRnd.nextFloat();
+        //player.x = viewWidth * mRnd.nextFloat();
         // Set the Y position
         // put player at center of screen
-        player.y = viewHeight/2;
+        //player.y = viewHeight/2;
         // The Y value is in the center of the Corona, add the size
         // to make sure it Coronats outside of the view bound
         //player.y += player.scale * mBaseSize;
         // Add a random offset to create a small difference so players don't regen in the same spot
-        player.y += viewHeight * mRnd.nextFloat() / 4f;
+        //player.y += viewHeight * mRnd.nextFloat() / 4f;
         // get time of spawn to track progress
         player.spawnTime = System.currentTimeMillis();
         //set score to zero
         player.score = 0;
         // The alpha is determined by the scale of the Corona and a random multiplier.
-        player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+        //player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+        player.alpha = 0;
         // The bigger and brighter a Corona is, the faster it moves
         player.speed = mBaseSpeed * player.alpha * player.scale;
         //update player score on the screen
-        mapsActivity.mScoreTextView.setText(new StringBuilder().append(getResources().getString(R.string.score_text)).append(player.score).toString());
+        char[] arr = {'S','c','o','r','e',':', ' ', '0'};
+        mapsActivity.mScoreTextView.setText(arr, 0,8);
     }
 
 }

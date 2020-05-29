@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/distribution"
     package="com.example.myapplication"
     android:versionCode="1"
     android:versionName="1.0" >
@@ -71,7 +72,11 @@
         <activity
             android:name="com.example.myapplication.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            android:theme="@android:style/Theme.NoTitleBar"
+            map:uiRotateGestures="false"
+            map:uiScrollGestures="true"
+            map:uiTiltGestures="false"
+            map:uiZoomGestures="false" />
 
         <service android:name="com.example.myapplication.loaders.TrackingService" />
         <service android:name="com.example.myapplication.loaders.LocationIntentService" />
