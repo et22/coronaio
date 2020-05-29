@@ -17,9 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".GameOver">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".GameOver"></activity>
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity"
@@ -50,12 +49,12 @@
 
         <activity
             android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"
             android:theme="@android:style/Theme.NoTitleBar"
             map:uiRotateGestures="false"
             map:uiScrollGestures="true"
             map:uiTiltGestures="false"
-            map:uiZoomGestures="false"
-            android:label="@string/title_activity_maps"></activity>
+            map:uiZoomGestures="false" />
 
         <service android:name=".loaders.TrackingService" />
         <service android:name=".loaders.LocationIntentService" />

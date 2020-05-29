@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -13,10 +12,6 @@ import android.widget.Button;
 import com.example.myapplication.adapters.BNViewPagerAdapter;
 import com.example.myapplication.views.CoronaAnimationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -43,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.fragment_home);
         mAnimationView = (CoronaAnimationView) findViewById(R.id.animated_view);
 
         //bottomNav comp

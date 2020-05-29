@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,13 +26,20 @@ public class LoginActivity extends AppCompatActivity {
     private Button mSignIn, mCreateAccount;
     private EditText mEmail, mPassword;
     private FirebaseHelper firebaseHelper;
+    private FirebaseAuth mAuth;
+    private FirebaseUser mFirebaseUser;
+    private DatabaseReference mDatabase;
+    private String mUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         //initialize firebase helper
-        firebaseHelper = new FirebaseHelper();
+        //firebaseHelper = new FirebaseHelper();
+
+        //initialize firebase auth
+        mAuth = FirebaseAuth.getInstance();
 
         //initializing ui components
         mSignIn = findViewById(R.id.button_sign_in);
@@ -83,15 +91,32 @@ public class LoginActivity extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
         } else {
-            boolean test = firebaseHelper.isSignedIn(email, password, LoginActivity.this);
-            if(test){
-
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }else{
-                Toast.makeText(LoginActivity.this, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show();
-            }
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "signInWithEmail:success");
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            }
+                        }
+                    });
+//            boolean test = firebaseHelper.isSignedIn(email, password, LoginActivity.this);
+//            if(test){
+//
+//                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+//                startActivity(intent);
+//            }else{
+//                Toast.makeText(LoginActivity.this, "Authentication failed.",
+//                        Toast.LENGTH_SHORT).show();
+//            }
         }
 
     }

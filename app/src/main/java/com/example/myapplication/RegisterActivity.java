@@ -36,10 +36,15 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterActivity extends AppCompatActivity {
 
 
-        private EditText mNameView, mEmailView, mPasswordView;
+    private static final String TAG = "firebase3";
+    private EditText mNameView, mEmailView, mPasswordView;
         private Spinner mCellType;
         private Button mRegisterButton;
         private FirebaseHelper firebaseHelper;
+        private FirebaseAuth mAuth;
+        private FirebaseUser mFirebaseUser;
+        private DatabaseReference mDatabase;
+        private String mUserId;
 
 
         @Override
@@ -47,7 +52,9 @@ public class RegisterActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_register);
             //Initialize Firebase helper
-            firebaseHelper = new FirebaseHelper();
+            //firebaseHelper = new FirebaseHelper();
+            //initialize firebase auth
+            mAuth = FirebaseAuth.getInstance();
 
             //Makes the toolbar visible
             //Toolbar toolbar = findViewById(R.id.app_bar);
@@ -105,17 +112,42 @@ public class RegisterActivity extends AppCompatActivity {
                         AlertDialog dialog = builder.create();
                         dialog.show();
                     } else {
-                        String result = firebaseHelper.addNewUser(email, password, userName, mCellType.getSelectedItemPosition(), RegisterActivity.this);
-                        // If user is successfully registered, we lead them to loginActivity
-                        if(result.equals("success")){
-                            Toast.makeText(RegisterActivity.this, "Authentication worked.",
-                                    Toast.LENGTH_LONG).show();
-                            finish();
-                        }else{
-                            Toast.makeText(RegisterActivity.this, "Authentication failed: "
-                                            + result,
-                                    Toast.LENGTH_LONG).show();
-                        }
+                        mAuth.createUserWithEmailAndPassword(email, password)
+                                .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            // Sign in success, save the user's username and cellType
+                                            Log.d(TAG, "createUserWithEmail:success");
+                                            mFirebaseUser = mAuth.getCurrentUser();
+                                            mDatabase = FirebaseDatabase.getInstance().getReference();
+
+                                            mUserId = mFirebaseUser.getUid();
+
+                                            mDatabase.child("users").child(mUserId).child("userName").push().setValue(userName);
+                                            mDatabase.child("users").child(mUserId).child("cellType").push().setValue(mCellType.getSelectedItem().toString());
+                                            Toast.makeText(RegisterActivity.this, "Authentication worked.", Toast.LENGTH_LONG).show();
+                                            finish();
+                                            Log.d(TAG, "createUserWithEmail:failure", task.getException());
+
+                                        } else {
+                                            // If sign in fails, send the message to the user
+                                            Toast.makeText(RegisterActivity.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                        }
+                                    }
+                                });
+//                        String result = firebaseHelper.addNewUser(email, password, userName, mCellType.getSelectedItemPosition(), RegisterActivity.this);
+//                        // If user is successfully registered, we lead them to loginActivity
+//                        if(result.equals("success")){
+//                            Toast.makeText(RegisterActivity.this, "Authentication worked.",
+//                                    Toast.LENGTH_LONG).show();
+//                            finish();
+//                        }else{
+//                            Toast.makeText(RegisterActivity.this, "Authentication failed: "
+//                                            + result,
+//                                    Toast.LENGTH_LONG).show();
+//                        }
 
                     }
                 }

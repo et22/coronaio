@@ -48,6 +48,10 @@
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\drawable\\ic_play_circle_outline_black_24dp.xml"
     },
     {
+        "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_stats.xml.flat",
+        "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\layout\\fragment_stats.xml"
+    },
+    {
         "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
@@ -108,6 +112,10 @@
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\xml\\settings.xml"
     },
     {
+        "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
         "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
@@ -148,10 +156,6 @@
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
-        "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\layout\\activity_home.xml"
-    },
-    {
         "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
@@ -174,6 +178,10 @@
     {
         "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_history_black_24dp.xml.flat",
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\drawable\\ic_history_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_signin.png.flat",

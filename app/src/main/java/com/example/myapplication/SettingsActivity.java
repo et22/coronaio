@@ -26,10 +26,10 @@ public class SettingsActivity extends AppCompatActivity {
                 .replace(R.id.settings, new myPrefFrag()).commit();
         Toolbar toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+//        ActionBar actionBar = getSupportActionBar();
+//        if (actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//        }
     }
 
     //MyPrefFrag is a helper class that opens the settings menu using a
@@ -40,11 +40,11 @@ public class SettingsActivity extends AppCompatActivity {
             setPreferencesFromResource(R.xml.settings, rootKey);
         }
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.home){
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        if(item.getItemId() == R.id.home){
+//            finish();
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 }
