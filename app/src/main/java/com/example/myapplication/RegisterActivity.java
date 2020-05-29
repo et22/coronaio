@@ -40,17 +40,13 @@ public class RegisterActivity extends AppCompatActivity {
         private Spinner mCellType;
         private Button mRegisterButton;
         private FirebaseHelper firebaseHelper;
-        private FirebaseAuth mAuth;
-        private FirebaseUser mFirebaseUser;
-        private DatabaseReference mDatabase;
-        private String mUserId;
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_register);
-            //Initialize Firebase Auth
-            //mAuth = FirebaseAuth.getInstance();
+            //Initialize Firebase helper
             firebaseHelper = new FirebaseHelper();
 
             //Makes the toolbar visible

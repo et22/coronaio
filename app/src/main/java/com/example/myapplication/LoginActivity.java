@@ -25,14 +25,12 @@ public class LoginActivity extends AppCompatActivity {
     private Button mSignIn, mCreateAccount;
     private EditText mEmail, mPassword;
     private FirebaseHelper firebaseHelper;
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //initialize firebase auth
-        mAuth = FirebaseAuth.getInstance();
+        //initialize firebase helper
         firebaseHelper = new FirebaseHelper();
 
         //initializing ui components
