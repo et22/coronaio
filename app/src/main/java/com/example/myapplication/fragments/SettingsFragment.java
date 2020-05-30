@@ -39,7 +39,7 @@ public class SettingsFragment extends Fragment {
                 .replace(R.id.settings, new SettingsActivity.myPrefFrag()).commit();
         //Toolbar toolbar = view.findViewById(R.id.app_bar);
 //        view.setSupportActionBar(toolbar);
-        mSignOut = view.findViewById(R.id.button2);
+        mSignOut = view.findViewById(R.id.button_sign_out);
         // set onclick listener for signout button
         onSignOutClick();
     }
