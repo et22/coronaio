@@ -23,7 +23,7 @@
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity"
             android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity android:name=".HomeActivity" />
+
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"

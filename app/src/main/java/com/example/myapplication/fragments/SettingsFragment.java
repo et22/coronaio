@@ -36,7 +36,7 @@ public class SettingsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         assert getFragmentManager() != null;
         getFragmentManager().beginTransaction()
-                .replace(R.id.settings, new SettingsActivity.myPrefFrag()).commit();
+                .replace(R.id.settings, new SettingsFragment.myPrefFrag()).commit();
         //Toolbar toolbar = view.findViewById(R.id.app_bar);
 //        view.setSupportActionBar(toolbar);
         mSignOut = view.findViewById(R.id.button_sign_out);

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
     android:background="@android:color/white"
-    tools:context=".HomeActivity">
+    tools:context=".GameOver">
 
     <Button
         android:id="@+id/button_home"

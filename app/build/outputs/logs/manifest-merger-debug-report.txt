@@ -190,10 +190,6 @@ ADDED from C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\
 		ADDED from C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:25:13-65
 	android:name
 		ADDED from C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:23:13-45
-activity#com.example.myapplication.HomeActivity
-ADDED from C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:26:9-50
-	android:name
-		ADDED from C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:26:19-47
 activity#com.example.myapplication.SettingsActivity
 ADDED from C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:27:9-30:59
 	android:parentActivityName

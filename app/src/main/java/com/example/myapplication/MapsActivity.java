@@ -63,13 +63,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mLeaderBoard = findViewById(R.id.leaderboard_text);
         mQuitButton = findViewById(R.id.quit_button);
 
-        //mQuitButton oncli
+        //mQuitButton onclick
         mQuitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(animationView!=null&&animationLayout!=null)
                     animationLayout.removeView(animationView);
-                    Intent intent = new Intent(MapsActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(MapsActivity.this, MainActivity.class);
                     startActivity(intent);
             }
         });
