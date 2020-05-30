@@ -24,8 +24,8 @@ public class SettingsActivity extends AppCompatActivity {
         //initialize the fragment in the settings xml file
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.settings, new myPrefFrag()).commit();
-        Toolbar toolbar = findViewById(R.id.app_bar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.app_bar);
+       // setSupportActionBar(toolbar);
 //        ActionBar actionBar = getSupportActionBar();
 //        if (actionBar != null) {
 //            actionBar.setDisplayHomeAsUpEnabled(true);

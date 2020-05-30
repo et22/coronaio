@@ -1,9 +1,11 @@
 package com.example.myapplication.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,11 +15,15 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.PreferenceFragmentCompat;
 
+import com.example.myapplication.LoginActivity;
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.SettingsActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingsFragment extends Fragment {
-    public static final String KEY_UNIT= "unitpref";
+    Button mSignOut;
+
 
     @Nullable
     @Override
@@ -31,8 +37,23 @@ public class SettingsFragment extends Fragment {
         assert getFragmentManager() != null;
         getFragmentManager().beginTransaction()
                 .replace(R.id.settings, new SettingsActivity.myPrefFrag()).commit();
-//        Toolbar toolbar = view.findViewById(R.id.app_bar);
+        //Toolbar toolbar = view.findViewById(R.id.app_bar);
 //        view.setSupportActionBar(toolbar);
+        mSignOut = view.findViewById(R.id.button2);
+        // set onclick listener for signout button
+        onSignOutClick();
+    }
+
+    private void onSignOutClick() {
+        mSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO have to figure out how not to return to this activity if the user presses the back button
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

@@ -1618,7 +1618,6 @@ id all
 id always
 id animated_view
 id animated_view_container
-id app_bar
 id async
 id auto
 id barrier
@@ -1626,6 +1625,7 @@ id beginning
 id blocking
 id bottom
 id button
+id button2
 id buttonPanel
 id button_create_account
 id button_home
@@ -2101,6 +2101,7 @@ string action_sign_in_short
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string button
 string cell_type_text
 string character_counter_content_description
 string character_counter_overflowed_content_description

@@ -27,9 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mEmail, mPassword;
     private FirebaseHelper firebaseHelper;
     private FirebaseAuth mAuth;
-    private FirebaseUser mFirebaseUser;
-    private DatabaseReference mDatabase;
-    private String mUserId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +38,13 @@ public class LoginActivity extends AppCompatActivity {
 
         //initialize firebase auth
         mAuth = FirebaseAuth.getInstance();
+
+        //check if the user is already signed in
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser!=null){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
 
         //initializing ui components
         mSignIn = findViewById(R.id.button_sign_in);

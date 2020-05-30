@@ -32,9 +32,9 @@
 
     <!--Sign-out button, referenced https://stackoverflow.com/questions/7275015/android-start-activity-from-preferences-xml-->
     <androidx.preference.PreferenceCategory
-        android:title="account_settings">
+        android:title="Sign out">
         <PreferenceScreen
-            android:title="title_sign_out">
+            android:title="Sign out">
             <intent android:action="com.example.myruns4.SigninActivity">
             </intent>
             <!--android:targetPackage="com.example.myruns4"
