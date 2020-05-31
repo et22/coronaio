@@ -11,6 +11,7 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
@@ -250,17 +251,19 @@ public class SoloGameView extends View {
                 LatLng here = new LatLng(squoPlayerLocation.getLatitude(), squoPlayerLocation.getLongitude());
                 if(firstIter) {
                     mapsActivity.mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(here, 19));
+                    visibleRegion = mapsActivity.mMap.getProjection().getVisibleRegion();
                     mapsActivity.mMap.getUiSettings().setZoomGesturesEnabled(false);
                     mapsActivity.mMap.getUiSettings().setRotateGesturesEnabled(false);
                     mapsActivity.mMap.getUiSettings().setTiltGesturesEnabled(false);
-                    mapsActivity.mMap.getUiSettings().setScrollGesturesEnabled(false);
-                    player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
-                    visibleRegion = mapsActivity.mMap.getProjection().getVisibleRegion();
-                    for(Corona Corona: mCoronas)
-                        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                    mapsActivity.mMap.getUiSettings().setScrollGesturesEnabled(true);
                 }
                 Log.d("TAGTAGTAG", "herher");
                 if(playerScreenLocation!=null){
+                    if(previousScreenLocation==null) {
+                        player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                        for (Corona Corona : mCoronas)
+                            Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                    }
                     previousScreenLocation = playerScreenLocation;
                 }
                 playerScreenLocation = mapsActivity.mMap.getProjection().toScreenLocation(here);
@@ -349,7 +352,7 @@ public class SoloGameView extends View {
                         player.scale += .2;
                         //update score textview
                         Log.d("TAGTAGGAT", ""+player.score);
-                        mapsActivity.mScoreTextView.setText(new StringBuilder().append(getResources().getString(R.string.score_text)).append(player.score).toString());
+                        mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text) + player.score);
                         //check if Got all 32 viruses
                         if(player.score>=COUNT){
                             Intent intent = new Intent(mapsActivity, GameOver.class);
@@ -415,9 +418,7 @@ public class SoloGameView extends View {
         // The bigger and brighter a Corona is, the faster it moves
         player.speed = mBaseSpeed * player.alpha * player.scale;
         //update player score on the screen
-        char[] arr = {'S','c','o','r','e',':', ' ', '0'};
-        mapsActivity.mScoreTextView.setText(arr, 0,8);
+        mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text) + player.score);
     }
-
 }
 

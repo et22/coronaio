@@ -94,7 +94,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         else if(from.equals("Solo")){
             mLeaderBoard.setText("");
-            mScoreTextView.setText("Score");
             animationView = (SoloGameView) findViewById(R.id.solo_animated_view);
         }
     }

@@ -45,10 +45,6 @@
             android:name="com.example.myapplication.RegisterActivity"
             android:parentActivityName="com.example.myapplication.LoginActivity"
             android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity
-            android:name="com.example.myapplication.SettingsActivity"
-            android:label="Settings"
-            android:parentActivityName="com.example.myapplication.LoginActivity" />
         <activity android:name="com.example.myapplication.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,11 +67,7 @@
         <activity
             android:name="com.example.myapplication.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@android:style/Theme.NoTitleBar"
-            map:uiRotateGestures="false"
-            map:uiScrollGestures="true"
-            map:uiTiltGestures="false"
-            map:uiZoomGestures="false" />
+            android:theme="@android:style/Theme.NoTitleBar" />
 
         <service android:name="com.example.myapplication.loaders.TrackingService" />
         <service android:name="com.example.myapplication.loaders.LocationIntentService" />
