@@ -13,9 +13,14 @@
     </FrameLayout>
     <Button
         android:id="@+id/button_sign_out"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="55dp"
         android:text="@string/sign_out"
-        android:layout_marginLeft="65dp"/>
+        android:textSize="17sp"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:background="@drawable/custom_button"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
