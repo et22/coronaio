@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
+import android.os.CountDownTimer;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -19,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
 import com.example.myapplication.GameOver;
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.MapsActivity;
 import com.example.myapplication.R;
 
@@ -30,8 +32,10 @@ import android.animation.TimeAnimator;
         import android.graphics.drawable.Drawable;
         import android.util.AttributeSet;
         import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-        import androidx.core.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.myapplication.R;
@@ -39,6 +43,7 @@ import com.example.myapplication.loaders.TrackingService;
 import com.example.myapplication.models.Player;
 import com.example.myapplication.utils.Constants;
 import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -70,7 +75,6 @@ public class SoloGameView extends View {
         private float speed;
     }
 
-
     //new game instance variables
     private Intent serviceIntent;
     private Location squoPlayerLocation=null;
@@ -80,6 +84,11 @@ public class SoloGameView extends View {
     private Point playerScreenLocation=null;
     private Point previousScreenLocation=null;
     private Context soloContext;
+    private View mapView;
+    private long prevUpdate = System.currentTimeMillis();
+    private long nextUpdate =  System.currentTimeMillis()+ 5000;
+    private int onUpdate = 0;
+    public CountDownTimer timers;
 
     //old animation instance variables
     private static final int BASE_SPEED_DP_PER_S = 0;
@@ -96,7 +105,7 @@ public class SoloGameView extends View {
     private static final float ALPHA_RANDOM_PART = 0.5f;
 
     private final Corona[] mCoronas = new Corona[COUNT];
-    private final Player player = new Player();
+    public final Player player = new Player();
     private final Random mRnd = new Random(SEED);
 
     private TimeAnimator mTimeAnimator;
@@ -223,6 +232,56 @@ public class SoloGameView extends View {
         mapsActivity = (MapsActivity) getContext();
         LocalBroadcastManager.getInstance(mapsActivity).registerReceiver(mLocationBroadcast,
                 new IntentFilter(Constants.BROADCAST_LOCATION));
+        //set quit button click listener
+        //mQuitButton onclick
+        mapsActivity.mQuitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mapsActivity, MainActivity.class);
+
+                onDetachedFromWindow();
+                soloContext.startActivity(intent);
+            }
+        });
+        //start countdown
+        new CountDownTimer(11000, 1000){
+            public void onTick(long millisUntilFinished){
+                long seconds = (millisUntilFinished/1000)%60;
+                mapsActivity.mCountDown.setText(String.format("%02d",seconds));
+            }
+            public  void onFinish(){
+                //mapsActivity.getSupportFragmentManager().beginTransaction().show(mapsActivity.mapFragment).commit();
+                mapsActivity.mScoreTextView.setVisibility(TextView.VISIBLE);
+                mapsActivity.mQuitButton.setVisibility(Button.VISIBLE);
+                mapsActivity.mLeaderBoard.setVisibility(TextView.VISIBLE);
+                mapsActivity.mCountDown.setVisibility(TextView.INVISIBLE);
+                if(player!=null) player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                if(mCoronas!=null) {
+                    for (Corona Corona : mCoronas)
+                        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                }
+                timers = new CountDownTimer(151000, 1000){
+                    public void onTick(long millisUntilFinished){
+                        long minutes = (millisUntilFinished/1000)/60;
+                        long seconds = (millisUntilFinished/1000)%60;
+                        mapsActivity.mLeaderBoard.setText(String.format("%d",minutes) + ":" + String.format("%02d",seconds));
+                    }
+                    public  void onFinish(){
+                        Intent intent = new Intent(mapsActivity, GameOver.class);
+                        assert player != null;
+                        intent.putExtra(Constants.SCORE_EXTRA, player.score);
+                        intent.putExtra("wl", false);
+                        intent.putExtra("GameType", "Solo");
+                        onDetachedFromWindow();
+                        soloContext.startActivity(intent);
+                    }
+                }.start();
+            }
+        }.start();
+
+        //mapview
+        mapView = mapsActivity.getSupportFragmentManager().findFragmentById(R.id.map).getView();
+
         //set up time animation
         mTimeAnimator = new TimeAnimator();
         mTimeAnimator.setTimeListener(new TimeAnimator.TimeListener() {
@@ -243,15 +302,33 @@ public class SoloGameView extends View {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(Constants.BROADCAST_LOCATION)) {
+                prevUpdate=nextUpdate;
+                nextUpdate=System.currentTimeMillis();
+                onUpdate = 0;
+
                 Log.d("gps received location", "in broadcast location");
                 boolean firstIter=false;
                 if(squoPlayerLocation!=null) prevPlayerLocation = squoPlayerLocation;
                 else firstIter=true;
                 squoPlayerLocation = intent.getParcelableExtra(Constants.LOCATION_POSITION_EXTRA);
-                LatLng here = new LatLng(squoPlayerLocation.getLatitude(), squoPlayerLocation.getLongitude());
+                final LatLng here = new LatLng(squoPlayerLocation.getLatitude(), squoPlayerLocation.getLongitude());
                 if(firstIter) {
                     mapsActivity.mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(here, 19));
-                    visibleRegion = mapsActivity.mMap.getProjection().getVisibleRegion();
+                    //visibleRegion = mapsActivity.mMap.getProjection().getVisibleRegion();
+                    /*if (mapView.getViewTreeObserver().isAlive()) {
+                        mapView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                            @Override
+                            public void onGlobalLayout() {
+                                //removelistener
+                                //mapView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                                // set map viewport
+                                // CENTER is LatLng object with the center of the map
+                                //mapsActivity.mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(here, 19));
+                                // ! you can query Projection object here
+                                playerScreenLocation = mapsActivity.mMap.getProjection().toScreenLocation(here);
+                            }
+                        });
+                    }*/
                     mapsActivity.mMap.getUiSettings().setZoomGesturesEnabled(false);
                     mapsActivity.mMap.getUiSettings().setRotateGesturesEnabled(false);
                     mapsActivity.mMap.getUiSettings().setTiltGesturesEnabled(false);
@@ -259,14 +336,11 @@ public class SoloGameView extends View {
                 }
                 Log.d("TAGTAGTAG", "herher");
                 if(playerScreenLocation!=null){
-                    if(previousScreenLocation==null) {
-                        player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
-                        for (Corona Corona : mCoronas)
-                            Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
-                    }
                     previousScreenLocation = playerScreenLocation;
                 }
-                playerScreenLocation = mapsActivity.mMap.getProjection().toScreenLocation(here);
+                Projection projection = mapsActivity.mMap.getProjection();
+                playerScreenLocation = projection.toScreenLocation(here);
+                //mapsActivity.mMap.addMarker(new MarkerOptions().position(projection.fromScreenLocation(playerScreenLocation)).title(""));
             }
         }
     };
@@ -274,6 +348,14 @@ public class SoloGameView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        TrackingService.activityDestroyed();
+        if (mLocationBroadcast != null) {
+            //stopService(new Intent(this, TrackingService.class));
+            LocalBroadcastManager.getInstance(this.soloContext).unregisterReceiver(mLocationBroadcast);
+        }
+        if(timers!=null){
+            timers.cancel();
+        }
         if(mTimeAnimator!=null) {
             mTimeAnimator.cancel();
             mTimeAnimator.setTimeListener(null);
@@ -332,9 +414,15 @@ public class SoloGameView extends View {
         if(playerScreenLocation != null){
             Log.d("TAGTAGTAG", "playerScreenLoc not nulll");
             //update player location
-            if(previousScreenLocation!=null) {
-                player.x = player.x + (playerScreenLocation.x - previousScreenLocation.x) * deltaMs / TrackingService.UPDATE_INTERVAL;
-                player.y = player.y + (playerScreenLocation.y - previousScreenLocation.y) * deltaMs / TrackingService.UPDATE_INTERVAL;
+            int updateTime = 25;
+            if(onUpdate<updateTime&&previousScreenLocation!=null){
+                player.x = (float) (player.x + (previousScreenLocation.x - player.x)*1/updateTime);
+                player.y = (float) (player.y+ (previousScreenLocation.y-player.y)*1/updateTime);
+                onUpdate++;
+            }
+            else if(previousScreenLocation!=null) {
+                player.x = player.x + (playerScreenLocation.x - previousScreenLocation.x) * deltaMs / (nextUpdate-prevUpdate);
+                player.y = player.y + (playerScreenLocation.y - previousScreenLocation.y) * deltaMs / (nextUpdate-prevUpdate);
             }
             else{
                 player.x = playerScreenLocation.x;
@@ -358,6 +446,7 @@ public class SoloGameView extends View {
                             Intent intent = new Intent(mapsActivity, GameOver.class);
                             intent.putExtra(Constants.SCORE_EXTRA, player.score);
                             intent.putExtra("GameType", "Solo");
+                            intent.putExtra("wl", true);
                             onDetachedFromWindow();
                             soloContext.startActivity(intent);
                         }
@@ -366,6 +455,7 @@ public class SoloGameView extends View {
             }
         }
     }
+
 
     /**
      * Initialize the given Corona by randomizing it's position, scale and alpha
@@ -421,4 +511,3 @@ public class SoloGameView extends View {
         mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text) + player.score);
     }
 }
-

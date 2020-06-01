@@ -33,46 +33,43 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
-
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     public GoogleMap mMap;
     private int PERMISSION_REQUEST_CODE = 1;
     public TextView mScoreTextView;
-    public TextView mLeaderBoard;
+    public TextView mLeaderBoard, mCountDown;
     public Button mQuitButton;
     public String from;
     private FrameLayout animationLayout;
     private View animationView;
+    public SupportMapFragment mapFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        from = getIntent().getStringExtra("GameType");
+        Intent from_intent = getIntent();
+        from = from_intent.getStringExtra("GameType");
         if(from.equals("Solo"))
             setContentView(R.layout.activity_maps);
         else
             setContentView(R.layout.activity_maps1);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        //getSupportFragmentManager().beginTransaction().hide(mapFragment).commit();
 
         //instantiate text views
         mScoreTextView = findViewById(R.id.score_text_view);
         mLeaderBoard = findViewById(R.id.leaderboard_text);
         mQuitButton = findViewById(R.id.quit_button);
+        mCountDown = findViewById(R.id.start_countdown);
 
-        //mQuitButton onclick
-        mQuitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(animationView!=null&&animationLayout!=null)
-                    animationLayout.removeView(animationView);
-                    Intent intent = new Intent(MapsActivity.this, MainActivity.class);
-                    startActivity(intent);
-            }
-        });
+        mScoreTextView.setVisibility(TextView.INVISIBLE);
+        mQuitButton.setVisibility(Button.INVISIBLE);
+        mLeaderBoard.setVisibility(TextView.INVISIBLE);
+
         //
         createTrackingService();
     }
@@ -93,7 +90,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             animationView= (FFAGameView) findViewById(R.id.ffa_animated_view);
         }
         else if(from.equals("Solo")){
-            mLeaderBoard.setText("");
             animationView = (SoloGameView) findViewById(R.id.solo_animated_view);
         }
     }
@@ -134,7 +130,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         // Add a marker in Sydney and move the camera
         //LatLng sydney = new LatLng(-34, 151);
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));

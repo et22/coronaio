@@ -116,6 +116,10 @@
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\cs65fp\\coronaio\\app\\src\\main\\res\\drawable\\ic_play_circle_outline_black_24dp.xml"
     },
     {
+        "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\cs65fp\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\drawable_you_lost.png.flat",
+        "source": "C:\\Users\\GWC-NYC-13\\Desktop\\cs65fp\\coronaio\\app\\src\\main\\res\\drawable\\you_lost.png"
+    },
+    {
         "merged": "C:\\Users\\GWC-NYC-13\\Desktop\\cs65fp\\coronaio\\app\\build\\intermediates\\res\\merged\\debug\\xml_settings.xml.flat",
         "source": "C:\\Users\\GWC-NYC-13\\Desktop\\cs65fp\\coronaio\\app\\src\\main\\res\\xml\\settings.xml"
     },

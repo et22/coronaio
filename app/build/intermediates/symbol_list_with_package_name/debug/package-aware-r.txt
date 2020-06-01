@@ -1549,6 +1549,7 @@ drawable title
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable won_score
+drawable you_lost
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1847,6 +1848,7 @@ id src_in
 id src_over
 id standard
 id start
+id start_countdown
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
@@ -2210,6 +2212,7 @@ string status_bar_notification_info_overflow
 string summary_cellType
 string summary_collapsed_preference_list
 string summary_website
+string time
 string title_activity_login
 string title_activity_maps
 string title_cellType

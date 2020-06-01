@@ -23,8 +23,11 @@ public class GameOver extends AppCompatActivity {
         mBackHome = findViewById(R.id.button_home);
         mPlayAgain = findViewById(R.id.button_play_again);
         myScore = findViewById(R.id.score_text_view);
-        Intent intent = getIntent();
-        int score = intent.getIntExtra(Constants.SCORE_EXTRA,0);
+        final Intent from_intent = getIntent();
+        int score = from_intent.getIntExtra(Constants.SCORE_EXTRA,0);
+        boolean win = from_intent.getBooleanExtra("wl", true);
+        if(!win) mWonScore.setBackground(getDrawable(R.drawable.you_lost));
+
         myScore.setText(score + "");
         mBackHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,9 +40,10 @@ public class GameOver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GameOver.this, MapsActivity.class);
+                String from = from_intent.getStringExtra("GameType");
+                intent.putExtra("GameType", from);
                 startActivity(intent);
             }
         });
-
     }
 }

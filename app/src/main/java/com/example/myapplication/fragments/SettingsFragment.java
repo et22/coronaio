@@ -73,7 +73,7 @@ public class SettingsFragment extends Fragment {
         Log.d("life", "onPause");
         //We check if the user's settings for either imperial or metric
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
-        String s = sharedPref.getString(KEY_UNIT, "idk");
+        String s = sharedPref.getString(KEY_UNIT, "0");
         int index = Integer.parseInt(s);
         //List<String> cellTypes = Arrays.asList(getResources().getStringArray(R.array.cell_types));
         mDatabase = FirebaseDatabase.getInstance().getReference();

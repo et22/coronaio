@@ -9,16 +9,20 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
+import android.os.CountDownTimer;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.myapplication.GameOver;
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.MapsActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.loaders.TrackingService;
@@ -72,6 +76,10 @@ public class FFAGameView extends View {
     private Context soloContext;
     private ArrayList<Player> mPlayers = new ArrayList<Player>();
     private HashSet<String> haveEaten = new HashSet<String>();
+    public CountDownTimer timers;
+    private long prevUpdate = System.currentTimeMillis();
+    private long nextUpdate =  System.currentTimeMillis()+ 5000;
+    private int onUpdate = 0;
 
     //old animation instance variables
     private static final int BASE_SPEED_DP_PER_S = 0;
@@ -181,7 +189,8 @@ public class FFAGameView extends View {
             // Restore the canvas to it's previous position and rotation
             canvas.restoreToCount(save);
         }
-        for(Player player: mPlayers){
+        for(Player player: mPlayers)
+        {
             drawOtherPlayerHelper(canvas, viewHeight, player);
         }
     }
@@ -250,14 +259,24 @@ public class FFAGameView extends View {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
                 mPlayers = new ArrayList<Player>();
+                //int maxScore = player.score;
+                //Player bestPlayer = player;
+                // String key = reference.child("users").child(player.userid).child("userName").getKey();
+                //String uname = reference.child("users").child(bestPlayer.userid).child("userName").child(key).toString();
                 for(DataSnapshot child: dataSnapshot.getChildren()){
                     if(!child.getKey().equals(currentuser)) {
-                        Player player = child.getValue(Player.class);
-                        player.x = convertDpToPixel(player.dpX, mapsActivity);
-                        player.y = convertDpToPixel(player.dpY, mapsActivity);
-                        mPlayers.add(player);
+                        Player player1 = child.getValue(Player.class);
+                        player1.x = convertDpToPixel(player1.dpX, mapsActivity);
+                        player1.y = convertDpToPixel(player1.dpY, mapsActivity);
+                        mPlayers.add(player1);
+                       /* if(player1.score>maxScore){
+                            maxScore = player1.score;
+                            key = reference.child("users").child(player1.userid).child("userName").getKey();
+                            uname = reference.child("users").child(bestPlayer.userid).child("userName").child(key).getKey();
+                        }*/
                     }
                 }
+                //mapsActivity.mLeaderBoard.setText(getResources().getString(R.string.leaderboard) + uname);
                 // ...
             }
             @Override
@@ -265,6 +284,38 @@ public class FFAGameView extends View {
             }
         };
         ffaReference.addValueEventListener(playerListener);
+        //set quit button click listener
+        //mQuitButton onclick
+        mapsActivity.mQuitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mapsActivity, MainActivity.class);
+                onDetachedFromWindow();
+                soloContext.startActivity(intent);
+            }
+        });
+
+        //start countdown
+        new CountDownTimer(11000, 1000){
+            public void onTick(long millisUntilFinished){
+                long seconds = (millisUntilFinished/1000)%60;
+                mapsActivity.mCountDown.setText(String.format("%02d",seconds));
+            }
+
+            public  void onFinish(){
+                //mapsActivity.getSupportFragmentManager().beginTransaction().show(mapsActivity.mapFragment).commit();
+                mapsActivity.mScoreTextView.setVisibility(TextView.VISIBLE);
+                mapsActivity.mQuitButton.setVisibility(Button.VISIBLE);
+                //mapsActivity.mLeaderBoard.setVisibility(TextView.VISIBLE);
+                mapsActivity.mCountDown.setVisibility(TextView.INVISIBLE);
+                if(player!=null) player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                if(mCoronas!=null) {
+                    for (FFAGameView.Corona Corona : mCoronas)
+                        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                }
+            }
+        }.start();
+
         //set up time animation
         mTimeAnimator = new TimeAnimator();
         mTimeAnimator.setTimeListener(new TimeAnimator.TimeListener() {
@@ -286,7 +337,10 @@ public class FFAGameView extends View {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(Constants.BROADCAST_LOCATION)) {
-                Log.d("gps received location", "in broadcast location");
+                prevUpdate=nextUpdate;
+                nextUpdate=System.currentTimeMillis();
+                onUpdate = 0;
+
                 boolean firstIter=false;
                 if(squoPlayerLocation!=null) prevPlayerLocation = squoPlayerLocation;
                 else firstIter=true;
@@ -294,31 +348,35 @@ public class FFAGameView extends View {
                 LatLng here = new LatLng(squoPlayerLocation.getLatitude(), squoPlayerLocation.getLongitude());
                 if(firstIter) {
                     mapsActivity.mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(here, 19));
-                   mapsActivity.mMap.getUiSettings().setZoomGesturesEnabled(false);
+                    mapsActivity.mMap.getUiSettings().setZoomGesturesEnabled(false);
                     mapsActivity.mMap.getUiSettings().setRotateGesturesEnabled(false);
                     mapsActivity.mMap.getUiSettings().setTiltGesturesEnabled(false);
                     mapsActivity.mMap.getUiSettings().setScrollGesturesEnabled(true);
                     visibleRegion = mapsActivity.mMap.getProjection().getVisibleRegion();
-          }
+                }
                 Log.d("TAGTAGTAG", "herher");
                 if(playerScreenLocation!=null){
                     previousScreenLocation = playerScreenLocation;
-                    player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
-                    for(FFAGameView.Corona Corona: mCoronas)
-                        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
                 }
                 playerScreenLocation = mapsActivity.mMap.getProjection().toScreenLocation(here);
             }
         }
     };
 
+
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mTimeAnimator.cancel();
-        mTimeAnimator.setTimeListener(null);
-        mTimeAnimator.removeAllListeners();
-        mTimeAnimator = null;
+        if (mLocationBroadcast != null) {
+            //stopService(new Intent(this, TrackingService.class));
+            LocalBroadcastManager.getInstance(this.soloContext).unregisterReceiver(mLocationBroadcast);
+        }
+        if(mTimeAnimator!=null) {
+            mTimeAnimator.cancel();
+            mTimeAnimator.setTimeListener(null);
+            mTimeAnimator.removeAllListeners();
+            mTimeAnimator = null;
+        }
         //delete player from ffa database
         reference.child("ffa").child(currentuser).setValue(null);
     }
@@ -358,7 +416,6 @@ public class FFAGameView extends View {
         final float deltaSeconds = deltaMs / 1000f;
         final int viewWidth = getWidth();
         final int viewHeight = getHeight();
-
         for (final Corona Corona : mCoronas) {
             // Move the Corona based on the elapsed time and it's speed
             Corona.y -= Corona.speed * deltaSeconds;
@@ -373,6 +430,12 @@ public class FFAGameView extends View {
         if(playerScreenLocation != null){
             Log.d("TAGTAGTAG", "playerScreenLoc not nulll");
             //update player location
+            int updateTime = 25;
+            if(onUpdate<updateTime&&previousScreenLocation!=null){
+                player.x = (float) (player.x + (previousScreenLocation.x - player.x)*1/updateTime);
+                player.y = (float) (player.y+ (previousScreenLocation.y-player.y)*1/updateTime);
+                onUpdate++;
+            }
             if(previousScreenLocation!=null) {
                 player.x = player.x + (playerScreenLocation.x - previousScreenLocation.x) * deltaMs / TrackingService.UPDATE_INTERVAL;
                 player.y = player.y + (playerScreenLocation.y - previousScreenLocation.y) * deltaMs / TrackingService.UPDATE_INTERVAL;
@@ -389,6 +452,7 @@ public class FFAGameView extends View {
             //check for intersection with virus
             int count = 0;
             final float size = player.scale * mBaseSize;
+            final float dpsize = convertPixelsToDp(size, mapsActivity);
             for (final Corona Corona : mCoronas) {
                 count++;
                 if(player.x+size>Corona.x&&player.x-size<Corona.x&&player.y+size>Corona.y&&player.y-size<Corona.y){
@@ -411,11 +475,12 @@ public class FFAGameView extends View {
             }
             //check intersection with other player
             for(Player otherPlayer: mPlayers){
-                if(player.x+size>otherPlayer.x&&player.x-size<otherPlayer.x&&player.y+size>otherPlayer.y&&player.y-size<otherPlayer.y) {
+                if(player.dpX+dpsize>otherPlayer.dpX&&player.dpX-dpsize<otherPlayer.dpX&&player.dpY+dpsize>otherPlayer.dpY&&player.dpY-dpsize<otherPlayer.dpY) {
                     if(otherPlayer.scale>player.scale){
                         Intent intent = new Intent(mapsActivity, GameOver.class);
                         intent.putExtra(Constants.SCORE_EXTRA, player.score);
                         intent.putExtra("GameType", "FFA");
+                        intent.putExtra("wl", false);
                         onDetachedFromWindow();
                         soloContext.startActivity(intent);
                     }
@@ -478,7 +543,7 @@ public class FFAGameView extends View {
         //set score to zero
         player.score = 0;
         // The alpha is determined by the scale of the Corona and a random multiplier.
-        player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+        player.alpha = 0;
         // The bigger and brighter a Corona is, the faster it moves
         player.speed = mBaseSpeed * player.alpha * player.scale;
         player.userid = currentuser;
@@ -512,4 +577,3 @@ public class FFAGameView extends View {
         return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
     }
 }
-

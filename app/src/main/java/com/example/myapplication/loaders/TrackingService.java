@@ -46,7 +46,7 @@ public class TrackingService extends Service {
         startLocationUpdate();
     }
 
-    private void startLocationUpdate(){
+    private void startLocationUpdate() {
         Log.d("gps", "10");
         LocationRequest locationRequest = new LocationRequest();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -108,30 +108,30 @@ public class TrackingService extends Service {
 
     //TODO automatic
     // request updates and set up callbacks for success or failure
-    public void requestActivityUpdatesHandler() {
-        Log.d("TrackingService", "requestActivityUpdatesHandler()");
-        if(mActivityRecognitionClient != null){
-            Log.d("TrackingService", "in requestActivityUpdatesHandler()");
-            Task<Void> task = mActivityRecognitionClient.requestActivityUpdates(
-                    Constants.DETECTION_INTERVAL_IN_MILLISECONDS,
-                    mPendingIntent);
-
-            // Adds a listener that is called if the Task completes successfully.
-            task.addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void result) {
-                    Log.d("TAG", "Successfully requested activity updates");
-                }
-            });
-            // Adds a listener that is called if the Task fails.
-            task.addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e("TAG", "Requesting activity updates failed to start");
-                }
-            });
-        }
-    }
+//    public void requestActivityUpdatesHandler() {
+//        Log.d("TrackingService", "requestActivityUpdatesHandler()");
+//        if(mActivityRecognitionClient != null){
+//            Log.d("TrackingService", "in requestActivityUpdatesHandler()");
+//            Task<Void> task = mActivityRecognitionClient.requestActivityUpdates(
+//                    Constants.DETECTION_INTERVAL_IN_MILLISECONDS,
+//                    mPendingIntent);
+//
+//            // Adds a listener that is called if the Task completes successfully.
+//            task.addOnSuccessListener(new OnSuccessListener<Void>() {
+//                @Override
+//                public void onSuccess(Void result) {
+//                    Log.d("TAG", "Successfully requested activity updates");
+//                }
+//            });
+//            // Adds a listener that is called if the Task fails.
+//            task.addOnFailureListener(new OnFailureListener() {
+//                @Override
+//                public void onFailure(@NonNull Exception e) {
+//                    Log.e("TAG", "Requesting activity updates failed to start");
+//                }
+//            });
+//        }
+//    }
 
 
     @Override
@@ -139,31 +139,31 @@ public class TrackingService extends Service {
         super.onDestroy();
         //TODO automatic
         // need to remove the request to Google play services. Brings down the connection.
-        removeActivityUpdatesHandler();
+        //removeActivityUpdatesHandler();
     }
 
     //TODO automatic
     // remove updates and set up callbacks for success or failure
-    public void removeActivityUpdatesHandler() {
-        if(mActivityRecognitionClient != null){
-            Task<Void> task = mActivityRecognitionClient.removeActivityUpdates(
-                    mPendingIntent);
-            // Adds a listener that is called if the Task completes successfully.
-            task.addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void result) {
-                    Log.d("TAG", "Removed activity updates successfully!");
-                }
-            });
-            // Adds a listener that is called if the Task fails.
-            task.addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e("TAG", "Failed to remove activity updates!");
-                }
-            });
-        }
-    }
+//    public void removeActivityUpdatesHandler() {
+//        if(mActivityRecognitionClient != null){
+//            Task<Void> task = mActivityRecognitionClient.removeActivityUpdates(
+//                    mPendingIntent);
+//            // Adds a listener that is called if the Task completes successfully.
+//            task.addOnSuccessListener(new OnSuccessListener<Void>() {
+//                @Override
+//                public void onSuccess(Void result) {
+//                    Log.d("TAG", "Removed activity updates successfully!");
+//                }
+//            });
+//            // Adds a listener that is called if the Task fails.
+//            task.addOnFailureListener(new OnFailureListener() {
+//                @Override
+//                public void onFailure(@NonNull Exception e) {
+//                    Log.e("TAG", "Failed to remove activity updates!");
+//                }
+//            });
+//        }
+//    }
 
     @Nullable
     @Override
