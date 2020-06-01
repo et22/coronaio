@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.myapplication.GameOver;
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.MapsActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.loaders.TrackingService;
@@ -265,6 +266,16 @@ public class FFAGameView extends View {
             }
         };
         ffaReference.addValueEventListener(playerListener);
+        //set quit button click listener
+        //mQuitButton onclick
+        mapsActivity.mQuitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mapsActivity, MainActivity.class);
+                onDetachedFromWindow();
+                soloContext.startActivity(intent);
+            }
+        });
         //set up time animation
         mTimeAnimator = new TimeAnimator();
         mTimeAnimator.setTimeListener(new TimeAnimator.TimeListener() {
@@ -302,23 +313,28 @@ public class FFAGameView extends View {
           }
                 Log.d("TAGTAGTAG", "herher");
                 if(playerScreenLocation!=null){
+                    if(previousScreenLocation==null) {
+                        player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                        for (FFAGameView.Corona Corona : mCoronas)
+                            Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                    }
                     previousScreenLocation = playerScreenLocation;
-                    player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
-                    for(FFAGameView.Corona Corona: mCoronas)
-                        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
                 }
                 playerScreenLocation = mapsActivity.mMap.getProjection().toScreenLocation(here);
             }
         }
     };
 
+
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mTimeAnimator.cancel();
-        mTimeAnimator.setTimeListener(null);
-        mTimeAnimator.removeAllListeners();
-        mTimeAnimator = null;
+        if(mTimeAnimator!=null) {
+            mTimeAnimator.cancel();
+            mTimeAnimator.setTimeListener(null);
+            mTimeAnimator.removeAllListeners();
+            mTimeAnimator = null;
+        }
         //delete player from ffa database
         reference.child("ffa").child(currentuser).setValue(null);
     }
@@ -478,7 +494,7 @@ public class FFAGameView extends View {
         //set score to zero
         player.score = 0;
         // The alpha is determined by the scale of the Corona and a random multiplier.
-        player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+        player.alpha = 0;
         // The bigger and brighter a Corona is, the faster it moves
         player.speed = mBaseSpeed * player.alpha * player.scale;
         player.userid = currentuser;

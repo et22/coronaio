@@ -1,15 +1,18 @@
 package com.example.myapplication.loaders;
 
+import android.Manifest;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 import com.example.myapplication.R;
 import com.example.myapplication.MapsActivity;
@@ -28,7 +31,7 @@ import static com.google.android.gms.location.LocationServices.getFusedLocationP
 
 public class TrackingService extends Service {
     public static final long UPDATE_INTERVAL = 5000;
-    private static final long FAST_INTERVAL = 1000;
+    private static final long FAST_INTERVAL = 5000;
     //TODO automatic variables for automatic
     private PendingIntent mPendingIntent;
     private ActivityRecognitionClient mActivityRecognitionClient;
@@ -46,7 +49,7 @@ public class TrackingService extends Service {
         startLocationUpdate();
     }
 
-    private void startLocationUpdate(){
+    private void startLocationUpdate() {
         Log.d("gps", "10");
         LocationRequest locationRequest = new LocationRequest();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);

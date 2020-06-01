@@ -1845,6 +1845,7 @@ id src_in
 id src_over
 id standard
 id start
+id start_countdown
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
@@ -2205,6 +2206,7 @@ string signup_error_message
 string signup_error_title
 string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
+string time
 string title_activity_login
 string title_activity_maps
 string userName_error_message

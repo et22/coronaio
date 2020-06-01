@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.myapplication.utils.Constants;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class GameOver extends AppCompatActivity {
     private View mWonScore;
@@ -23,8 +25,8 @@ public class GameOver extends AppCompatActivity {
         mBackHome = findViewById(R.id.button_home);
         mPlayAgain = findViewById(R.id.button_play_again);
         myScore = findViewById(R.id.score_text_view);
-        Intent intent = getIntent();
-        int score = intent.getIntExtra(Constants.SCORE_EXTRA,0);
+        final Intent from_intent = getIntent();
+        int score = from_intent.getIntExtra(Constants.SCORE_EXTRA,0);
         myScore.setText(score + "");
         mBackHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,9 +39,10 @@ public class GameOver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GameOver.this, MapsActivity.class);
+                String from = from_intent.getStringExtra("GameType");
+                intent.putExtra("GameType", from);
                 startActivity(intent);
             }
         });
-
     }
 }

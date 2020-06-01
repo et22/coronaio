@@ -63,9 +63,21 @@
         android:id="@+id/leaderboard_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textStyle="bold"
-        android:textSize ="12sp"
-        android:text="@string/leaderboard" />
+        android:textSize ="35sp"
+        android:textColor="@android:color/tertiary_text_dark"
+        android:text="@string/time" />
+    <TextView
+            android:id="@+id/start_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center|center_vertical"
+            android:textStyle="bold"
+            android:textSize ="100sp"
+            android:textColor="@android:color/tertiary_text_dark"
+            android:text="@string/time" />
     </LinearLayout>
 
     <LinearLayout
