@@ -10,6 +10,7 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
@@ -251,7 +252,10 @@ public class FFAGameView extends View {
                 mPlayers = new ArrayList<Player>();
                 for(DataSnapshot child: dataSnapshot.getChildren()){
                     if(!child.getKey().equals(currentuser)) {
-                        mPlayers.add(child.getValue(Player.class));
+                        Player player = child.getValue(Player.class);
+                        player.x = convertDpToPixel(player.dpX, mapsActivity);
+                        player.y = convertDpToPixel(player.dpY, mapsActivity);
+                        mPlayers.add(player);
                     }
                 }
                 // ...
@@ -290,11 +294,18 @@ public class FFAGameView extends View {
                 LatLng here = new LatLng(squoPlayerLocation.getLatitude(), squoPlayerLocation.getLongitude());
                 if(firstIter) {
                     mapsActivity.mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(here, 19));
+                   mapsActivity.mMap.getUiSettings().setZoomGesturesEnabled(false);
+                    mapsActivity.mMap.getUiSettings().setRotateGesturesEnabled(false);
+                    mapsActivity.mMap.getUiSettings().setTiltGesturesEnabled(false);
+                    mapsActivity.mMap.getUiSettings().setScrollGesturesEnabled(true);
                     visibleRegion = mapsActivity.mMap.getProjection().getVisibleRegion();
-                }
+          }
                 Log.d("TAGTAGTAG", "herher");
                 if(playerScreenLocation!=null){
                     previousScreenLocation = playerScreenLocation;
+                    player.alpha = ALPHA_SCALE_PART * player.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+                    for(FFAGameView.Corona Corona: mCoronas)
+                        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
                 }
                 playerScreenLocation = mapsActivity.mMap.getProjection().toScreenLocation(here);
             }
@@ -370,7 +381,8 @@ public class FFAGameView extends View {
                 player.x = playerScreenLocation.x;
                 player.y = playerScreenLocation.y;
             }
-
+            player.dpX = convertPixelsToDp(player.x, mapsActivity);
+            player.dpY = convertPixelsToDp(player.y, mapsActivity);
             //update player position in the database
             reference.child("ffa").child(currentuser).setValue(player);
 
@@ -444,7 +456,7 @@ public class FFAGameView extends View {
         //Corona.y += viewHeight * mRnd.nextFloat() / 4f;
 
         // The alpha is determined by the scale of the Corona and a random multiplier.
-        Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
+        Corona.alpha = 0;
         // The bigger and brighter a Corona is, the faster it moves
         Corona.speed = mBaseSpeed * Corona.alpha * Corona.scale;
     }
@@ -470,10 +482,34 @@ public class FFAGameView extends View {
         // The bigger and brighter a Corona is, the faster it moves
         player.speed = mBaseSpeed * player.alpha * player.scale;
         player.userid = currentuser;
+
+        player.dpX = convertPixelsToDp(player.x, mapsActivity);
+        player.dpY = convertPixelsToDp(player.y, mapsActivity);
         reference.child("ffa").child(currentuser).setValue(player);
         //update player score on the screen
         mapsActivity.mScoreTextView.setText(getResources().getString(R.string.score_text) + player.score);
     }
+    //from https://stackoverflow.com/questions/4605527/converting-pixels-to-dp
+    /**
+     * This method converts dp unit to equivalent pixels, depending on device density.
+     *
+     * @param dp A value in dp (density independent pixels) unit. Which we need to convert into pixels
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent px equivalent to dp depending on device density
+     */
+    public static float convertDpToPixel(float dp, Context context){
+        return dp * ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
 
+    /**
+     * This method converts device specific pixels to density independent pixels.
+     *
+     * @param px A value in px (pixels) unit. Which we need to convert into db
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent dp equivalent to px value
+     */
+    public static float convertPixelsToDp(float px, Context context){
+        return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
 }
 

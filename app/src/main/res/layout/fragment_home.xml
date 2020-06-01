@@ -74,8 +74,7 @@
         android:layout_height="200dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="3dp"
+        android:layout_marginLeft="0dp"
         android:translationZ="10dp"
         android:background="@drawable/corona_corner" />
-
 </RelativeLayout>

@@ -3,6 +3,8 @@ package com.example.myapplication.models;
 public class Player {
     public float x;
     public float y;
+    public float dpX;
+    public float dpY;
     public float scale;
     public float alpha;
     public float speed;

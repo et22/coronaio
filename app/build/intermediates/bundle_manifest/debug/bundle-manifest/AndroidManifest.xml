@@ -67,11 +67,7 @@
         <activity
             android:name="com.example.myapplication.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@android:style/Theme.NoTitleBar"
-            map:uiRotateGestures="false"
-            map:uiScrollGestures="true"
-            map:uiTiltGestures="false"
-            map:uiZoomGestures="false" />
+            android:theme="@android:style/Theme.NoTitleBar" />
 
         <service android:name="com.example.myapplication.loaders.TrackingService" />
         <service android:name="com.example.myapplication.loaders.LocationIntentService" />
