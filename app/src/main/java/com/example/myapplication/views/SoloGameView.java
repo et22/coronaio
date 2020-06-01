@@ -91,6 +91,8 @@ public class SoloGameView extends View {
     private View mapView;
     private long prevUpdate = System.currentTimeMillis();
     private long nextUpdate =  System.currentTimeMillis()+ 5000;
+    private int onUpdate = 0;
+    public CountDownTimer timers;
 
     //old animation instance variables
     private static final int BASE_SPEED_DP_PER_S = 0;
@@ -240,6 +242,7 @@ public class SoloGameView extends View {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mapsActivity, MainActivity.class);
+
                 onDetachedFromWindow();
                 soloContext.startActivity(intent);
             }
@@ -261,7 +264,7 @@ public class SoloGameView extends View {
                     for (Corona Corona : mCoronas)
                         Corona.alpha = ALPHA_SCALE_PART * Corona.scale + ALPHA_RANDOM_PART * mRnd.nextFloat();
                 }
-                new CountDownTimer(151000, 1000){
+                timers = new CountDownTimer(151000, 1000){
                     public void onTick(long millisUntilFinished){
                         long minutes = (millisUntilFinished/1000)/60;
                         long seconds = (millisUntilFinished/1000)%60;
@@ -303,7 +306,9 @@ public class SoloGameView extends View {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(Constants.BROADCAST_LOCATION)) {
-
+                prevUpdate=nextUpdate;
+                nextUpdate=System.currentTimeMillis();
+                onUpdate = 0;
 
                 Log.d("gps received location", "in broadcast location");
                 boolean firstIter=false;
@@ -340,7 +345,7 @@ public class SoloGameView extends View {
                 }
                 Projection projection = mapsActivity.mMap.getProjection();
                 playerScreenLocation = projection.toScreenLocation(here);
-                //mapsActivity.mMap.addMarker(new MarkerOptions().position(projection.fromScreenLocation(playerScreenLocation).title(""));
+                //mapsActivity.mMap.addMarker(new MarkerOptions().position(projection.fromScreenLocation(playerScreenLocation)).title(""));
             }
         }
     };
@@ -348,6 +353,14 @@ public class SoloGameView extends View {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
+        TrackingService.activityDestroyed();
+        if (mLocationBroadcast != null) {
+            //stopService(new Intent(this, TrackingService.class));
+            LocalBroadcastManager.getInstance(this.soloContext).unregisterReceiver(mLocationBroadcast);
+        }
+        if(timers!=null){
+            timers.cancel();
+        }
         if(mTimeAnimator!=null) {
             mTimeAnimator.cancel();
             mTimeAnimator.setTimeListener(null);
@@ -406,9 +419,15 @@ public class SoloGameView extends View {
         if(playerScreenLocation != null){
             Log.d("TAGTAGTAG", "playerScreenLoc not nulll");
             //update player location
-            if(previousScreenLocation!=null) {
-                player.x = player.x + (playerScreenLocation.x - previousScreenLocation.x) * deltaMs / TrackingService.UPDATE_INTERVAL;
-                player.y = player.y + (playerScreenLocation.y - previousScreenLocation.y) * deltaMs / TrackingService.UPDATE_INTERVAL;
+            int updateTime = 25;
+            if(onUpdate<updateTime&&previousScreenLocation!=null){
+                player.x = (float) (player.x + (previousScreenLocation.x - player.x)*1/updateTime);
+                player.y = (float) (player.y+ (previousScreenLocation.y-player.y)*1/updateTime);
+                onUpdate++;
+            }
+            else if(previousScreenLocation!=null) {
+                player.x = player.x + (playerScreenLocation.x - previousScreenLocation.x) * deltaMs / (nextUpdate-prevUpdate);
+                player.y = player.y + (playerScreenLocation.y - previousScreenLocation.y) * deltaMs / (nextUpdate-prevUpdate);
             }
             else{
                 player.x = playerScreenLocation.x;
@@ -432,6 +451,7 @@ public class SoloGameView extends View {
                             Intent intent = new Intent(mapsActivity, GameOver.class);
                             intent.putExtra(Constants.SCORE_EXTRA, player.score);
                             intent.putExtra("GameType", "Solo");
+                            intent.putExtra("wl", true);
                             onDetachedFromWindow();
                             soloContext.startActivity(intent);
                         }
@@ -440,6 +460,7 @@ public class SoloGameView extends View {
             }
         }
     }
+
 
     /**
      * Initialize the given Corona by randomizing it's position, scale and alpha

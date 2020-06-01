@@ -31,7 +31,7 @@ import static com.google.android.gms.location.LocationServices.getFusedLocationP
 
 public class TrackingService extends Service {
     public static final long UPDATE_INTERVAL = 5000;
-    private static final long FAST_INTERVAL = 5000;
+    private static final long FAST_INTERVAL = 1000;
     //TODO automatic variables for automatic
     private PendingIntent mPendingIntent;
     private ActivityRecognitionClient mActivityRecognitionClient;

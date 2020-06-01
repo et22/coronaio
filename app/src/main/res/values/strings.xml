@@ -23,7 +23,7 @@
     <string name="signup_error_message">Please make sure you enter an email and password</string>
     <string name="signup_error_title">Error!</string>
     <string name="userName_error_message">Please enter a username</string>
-    <string name="leaderboard">Leaderboard:</string>
+    <string name="leaderboard">Leader:</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

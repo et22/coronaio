@@ -27,6 +27,9 @@ public class GameOver extends AppCompatActivity {
         myScore = findViewById(R.id.score_text_view);
         final Intent from_intent = getIntent();
         int score = from_intent.getIntExtra(Constants.SCORE_EXTRA,0);
+        boolean win = from_intent.getBooleanExtra("wl", true);
+        if(!win) mWonScore.setBackground(getDrawable(R.drawable.you_lost));
+
         myScore.setText(score + "");
         mBackHome.setOnClickListener(new View.OnClickListener() {
             @Override

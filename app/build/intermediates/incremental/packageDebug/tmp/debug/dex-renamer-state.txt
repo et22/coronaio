@@ -1,4 +1,4 @@
-#Sun May 31 22:45:40 CDT 2020
+#Mon Jun 01 03:37:35 CDT 2020
 base.0=C\:\\Users\\ebtbl\\OneDrive\\Desktop\\coronaio\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

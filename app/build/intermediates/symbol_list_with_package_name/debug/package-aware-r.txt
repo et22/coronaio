@@ -1547,6 +1547,7 @@ drawable title
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable won_score
+drawable you_lost
 id ALT
 id BOTTOM_END
 id BOTTOM_START

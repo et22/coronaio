@@ -1546,6 +1546,7 @@ int drawable title 0x7f0800ba
 int drawable tooltip_frame_dark 0x7f0800bb
 int drawable tooltip_frame_light 0x7f0800bc
 int drawable won_score 0x7f0800bd
+int drawable you_lost 0x7f0800be
 int id ALT 0x7f090000
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002
