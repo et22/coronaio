@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\GWC-NYC-13\\Desktop\\CS65 Final Project\\coronaio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
+            "outputFile": "C:\\Users\\GWC-NYC-13\\Desktop\\cs65fp\\coronaio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\GWC-NYC-13\\.gradle\\caches\\transforms-2\\files-2.1\\b85b7e0481f3222852aee40ec4c0fa26\\material-1.1.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",

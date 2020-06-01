@@ -7,20 +7,20 @@
 7
 8    <uses-sdk
 9        android:minSdkVersion="27"
-9-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml
+9-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml
 10        android:targetSdkVersion="29" />
-10-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml
+10-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml
 11    <!--
 12         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
 13         Google Maps Android API v2, but you must specify either coarse or fine
 14         location permissions for the 'MyLocation' functionality.
 15    -->
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:10:5-79
-16-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:10:22-76
+16-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:10:5-79
+16-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:10:22-76
 17    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-17-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:11:5-77
-17-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:11:22-74
+17-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:11:5-77
+17-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:11:22-74
 18
 19    <!-- Include required permissions for Google Maps API to run. -->
 20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -48,243 +48,235 @@
 29-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:26:22-79
 30
 31    <application
-31-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:13:5-61:19
+31-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:13:5-58:19
 32        android:allowBackup="true"
-32-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:14:9-35
+32-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:14:9-35
 33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 33-->[androidx.core:core:1.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\b2b51ad2129f7ae88186ad90508b79ab\core-1.1.0\AndroidManifest.xml:24:18-86
 34        android:debuggable="true"
 35        android:extractNativeLibs="false"
 36        android:icon="@mipmap/ic_launcher"
-36-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:15:9-43
+36-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:15:9-43
 37        android:label="@string/app_name"
-37-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:16:9-41
+37-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:16:9-41
 38        android:roundIcon="@mipmap/ic_launcher_round"
-38-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:17:9-54
+38-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:17:9-54
 39        android:supportsRtl="true"
-39-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:18:9-35
+39-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:18:9-35
 40        android:testOnly="true"
 41        android:theme="@style/AppTheme" >
-41-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:19:9-40
+41-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:19:9-40
 42        <activity android:name="com.example.myapplication.MainActivity" />
-42-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:20:9-59
-42-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:20:19-47
+42-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:20:9-59
+42-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:20:19-47
 43        <activity android:name="com.example.myapplication.GameOver" />
-43-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:21:9-55
-43-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:21:19-43
+43-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:21:9-55
+43-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:21:19-43
 44        <activity
-44-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:22:9-25:68
+44-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:22:9-25:68
 45            android:name="com.example.myapplication.RegisterActivity"
-45-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:23:13-45
+45-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:23:13-45
 46            android:parentActivityName="com.example.myapplication.LoginActivity"
-46-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:24:13-56
+46-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:24:13-56
 47            android:windowSoftInputMode="stateVisible|adjustPan" />
-47-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:25:13-65
-48        <activity
-48-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:27:9-30:59
-49            android:name="com.example.myapplication.SettingsActivity"
-49-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:28:13-45
-50            android:label="Settings"
-50-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:29:13-37
-51            android:parentActivityName="com.example.myapplication.LoginActivity" />
-51-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:30:13-56
-52        <activity android:name="com.example.myapplication.LoginActivity" >
-52-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:31:9-37:20
-52-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:31:19-48
-53            <intent-filter>
-53-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:32:13-36:29
-54                <action android:name="android.intent.action.MAIN" />
-54-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:33:17-69
-54-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:33:25-66
-55
-56                <category android:name="android.intent.category.LAUNCHER" />
-56-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:35:17-77
-56-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:35:27-74
-57            </intent-filter>
-58        </activity>
-59        <!--
-60             The API key for Google Maps-based APIs is defined as a string resource.
-61             (See the file "res/values/google_maps_api.xml").
-62             Note that the API key is linked to the encryption key used to sign the APK.
-63             You need a different API key for each encryption key, including the release key that is used to
-64             sign the APK for publishing.
-65             You can define the keys for the dFebug and release targets in src/debug/ and src/release/.
-66        -->
-67        <meta-data
-67-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:46:9-48:55
-68            android:name="com.google.android.geo.API_KEY"
-68-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:47:13-58
-69            android:value="@string/google_maps_key" />
-69-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:48:13-52
-70
-71        <activity
-71-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:50:9-57:42
-72            android:name="com.example.myapplication.MapsActivity"
-72-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:51:13-41
-73            android:label="@string/title_activity_maps"
-73-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:52:13-56
-74            android:theme="@android:style/Theme.NoTitleBar"
-74-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:53:13-60
-75            map:uiRotateGestures="false"
-75-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:54:13-41
-76            map:uiScrollGestures="true"
-76-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:55:13-40
-77            map:uiTiltGestures="false"
-77-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:56:13-39
-78            map:uiZoomGestures="false" />
-78-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:57:13-39
-79
-80        <service android:name="com.example.myapplication.loaders.TrackingService" />
-80-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:59:9-60
-80-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:59:18-57
-81        <service android:name="com.example.myapplication.loaders.LocationIntentService" />
-81-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:60:9-66
-81-->C:\Users\GWC-NYC-13\Desktop\CS65 Final Project\coronaio\app\src\main\AndroidManifest.xml:60:18-63
-82        <!-- Needs to be explicitly declared on P+ -->
-83        <uses-library
-83-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f25cb47cdff75fe8ba838175dae7fbed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-84            android:name="org.apache.http.legacy"
-84-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f25cb47cdff75fe8ba838175dae7fbed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-85            android:required="false" />
-85-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f25cb47cdff75fe8ba838175dae7fbed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-86
-87        <activity
-87-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
-88            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-88-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
-89            android:excludeFromRecents="true"
-89-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
-90            android:exported="true"
-90-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
-91            android:launchMode="singleTask"
-91-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
-92            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-92-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
-93            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-93-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
-94
-95        <service
-95-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:33:9-39:19
-96            android:name="com.google.firebase.components.ComponentDiscoveryService"
-96-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:34:13-84
-97            android:directBootAware="true"
-97-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
-98            android:exported="false" >
-98-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:35:13-37
-99            <meta-data
-99-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
-100                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-100-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
-101                android:value="com.google.firebase.components.ComponentRegistrar" />
-101-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
-102            <meta-data
-102-->[com.google.android.gms:play-services-measurement-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\4186d91a57e737105011c35ac9a4adf6\jetified-play-services-measurement-api-17.4.2\AndroidManifest.xml:30:13-32:85
-103                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-103-->[com.google.android.gms:play-services-measurement-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\4186d91a57e737105011c35ac9a4adf6\jetified-play-services-measurement-api-17.4.2\AndroidManifest.xml:31:17-139
-104                android:value="com.google.firebase.components.ComponentRegistrar" />
-104-->[com.google.android.gms:play-services-measurement-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\4186d91a57e737105011c35ac9a4adf6\jetified-play-services-measurement-api-17.4.2\AndroidManifest.xml:32:17-82
-105            <meta-data
-105-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:32:13-34:85
-106                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-106-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:33:17-96
-107                android:value="com.google.firebase.components.ComponentRegistrar" />
-107-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:34:17-82
-108            <meta-data
-108-->[com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f41aa971764c4aef5caf485efddbcecd\jetified-firebase-database-19.3.0\AndroidManifest.xml:32:13-34:85
-109                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-109-->[com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f41aa971764c4aef5caf485efddbcecd\jetified-firebase-database-19.3.0\AndroidManifest.xml:33:17-109
-110                android:value="com.google.firebase.components.ComponentRegistrar" />
-110-->[com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f41aa971764c4aef5caf485efddbcecd\jetified-firebase-database-19.3.0\AndroidManifest.xml:34:17-82
-111            <meta-data
-111-->[com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\2ebd4a41fa7c7daceab7065f37bffed6\jetified-firebase-installations-16.2.1\AndroidManifest.xml:17:13-19:85
-112                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-112-->[com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\2ebd4a41fa7c7daceab7065f37bffed6\jetified-firebase-installations-16.2.1\AndroidManifest.xml:18:17-127
-113                android:value="com.google.firebase.components.ComponentRegistrar" />
-113-->[com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\2ebd4a41fa7c7daceab7065f37bffed6\jetified-firebase-installations-16.2.1\AndroidManifest.xml:19:17-82
-114        </service>
-115
-116        <receiver
-116-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:29:9-33:20
-117            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-117-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:30:13-85
-118            android:enabled="true"
-118-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:31:13-35
-119            android:exported="false" >
-119-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:32:13-37
-120        </receiver>
-121
+47-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:25:13-65
+48        <activity android:name="com.example.myapplication.LoginActivity" >
+48-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:28:9-34:20
+48-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:28:19-48
+49            <intent-filter>
+49-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:29:13-33:29
+50                <action android:name="android.intent.action.MAIN" />
+50-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:30:17-69
+50-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:30:25-66
+51
+52                <category android:name="android.intent.category.LAUNCHER" />
+52-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:32:17-77
+52-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:32:27-74
+53            </intent-filter>
+54        </activity>
+55        <!--
+56             The API key for Google Maps-based APIs is defined as a string resource.
+57             (See the file "res/values/google_maps_api.xml").
+58             Note that the API key is linked to the encryption key used to sign the APK.
+59             You need a different API key for each encryption key, including the release key that is used to
+60             sign the APK for publishing.
+61             You can define the keys for the dFebug and release targets in src/debug/ and src/release/.
+62        -->
+63        <meta-data
+63-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:43:9-45:55
+64            android:name="com.google.android.geo.API_KEY"
+64-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:44:13-58
+65            android:value="@string/google_maps_key" />
+65-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:45:13-52
+66
+67        <activity
+67-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:47:9-54:42
+68            android:name="com.example.myapplication.MapsActivity"
+68-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:48:13-41
+69            android:label="@string/title_activity_maps"
+69-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:49:13-56
+70            android:theme="@android:style/Theme.NoTitleBar"
+70-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:50:13-60
+71            map:uiRotateGestures="false"
+71-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:51:13-41
+72            map:uiScrollGestures="true"
+72-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:52:13-40
+73            map:uiTiltGestures="false"
+73-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:53:13-39
+74            map:uiZoomGestures="false" />
+74-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:54:13-39
+75
+76        <service android:name="com.example.myapplication.loaders.TrackingService" />
+76-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:56:9-60
+76-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:56:18-57
+77        <service android:name="com.example.myapplication.loaders.LocationIntentService" />
+77-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:57:9-66
+77-->C:\Users\GWC-NYC-13\Desktop\cs65fp\coronaio\app\src\main\AndroidManifest.xml:57:18-63
+78        <!-- Needs to be explicitly declared on P+ -->
+79        <uses-library
+79-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f25cb47cdff75fe8ba838175dae7fbed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+80            android:name="org.apache.http.legacy"
+80-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f25cb47cdff75fe8ba838175dae7fbed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+81            android:required="false" />
+81-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f25cb47cdff75fe8ba838175dae7fbed\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+82
+83        <activity
+83-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
+84            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+84-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
+85            android:excludeFromRecents="true"
+85-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
+86            android:exported="true"
+86-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
+87            android:launchMode="singleTask"
+87-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
+88            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+88-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
+89            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+89-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
+90
+91        <service
+91-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:33:9-39:19
+92            android:name="com.google.firebase.components.ComponentDiscoveryService"
+92-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:34:13-84
+93            android:directBootAware="true"
+93-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+94            android:exported="false" >
+94-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:35:13-37
+95            <meta-data
+95-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
+96                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+96-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\35d59384e5f94fa3a8b66cea2c1872ae\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
+98            <meta-data
+98-->[com.google.android.gms:play-services-measurement-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\4186d91a57e737105011c35ac9a4adf6\jetified-play-services-measurement-api-17.4.2\AndroidManifest.xml:30:13-32:85
+99                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+99-->[com.google.android.gms:play-services-measurement-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\4186d91a57e737105011c35ac9a4adf6\jetified-play-services-measurement-api-17.4.2\AndroidManifest.xml:31:17-139
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.android.gms:play-services-measurement-api:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\4186d91a57e737105011c35ac9a4adf6\jetified-play-services-measurement-api-17.4.2\AndroidManifest.xml:32:17-82
+101            <meta-data
+101-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:32:13-34:85
+102                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+102-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:33:17-96
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:34:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f41aa971764c4aef5caf485efddbcecd\jetified-firebase-database-19.3.0\AndroidManifest.xml:32:13-34:85
+105                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+105-->[com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f41aa971764c4aef5caf485efddbcecd\jetified-firebase-database-19.3.0\AndroidManifest.xml:33:17-109
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-database:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\f41aa971764c4aef5caf485efddbcecd\jetified-firebase-database-19.3.0\AndroidManifest.xml:34:17-82
+107            <meta-data
+107-->[com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\2ebd4a41fa7c7daceab7065f37bffed6\jetified-firebase-installations-16.2.1\AndroidManifest.xml:17:13-19:85
+108                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+108-->[com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\2ebd4a41fa7c7daceab7065f37bffed6\jetified-firebase-installations-16.2.1\AndroidManifest.xml:18:17-127
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[com.google.firebase:firebase-installations:16.2.1] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\2ebd4a41fa7c7daceab7065f37bffed6\jetified-firebase-installations-16.2.1\AndroidManifest.xml:19:17-82
+110        </service>
+111
+112        <receiver
+112-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:29:9-33:20
+113            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+113-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:30:13-85
+114            android:enabled="true"
+114-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:31:13-35
+115            android:exported="false" >
+115-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:32:13-37
+116        </receiver>
+117
+118        <service
+118-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:35:9-38:40
+119            android:name="com.google.android.gms.measurement.AppMeasurementService"
+119-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:36:13-84
+120            android:enabled="true"
+120-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:37:13-35
+121            android:exported="false" />
+121-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:38:13-37
 122        <service
-122-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:35:9-38:40
-123            android:name="com.google.android.gms.measurement.AppMeasurementService"
-123-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:36:13-84
+122-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:39:9-43:72
+123            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+123-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:40:13-87
 124            android:enabled="true"
-124-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:37:13-35
-125            android:exported="false" />
-125-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:38:13-37
-126        <service
-126-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:39:9-43:72
-127            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-127-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:40:13-87
-128            android:enabled="true"
-128-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:41:13-35
-129            android:exported="false"
-129-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:42:13-37
-130            android:permission="android.permission.BIND_JOB_SERVICE" />
-130-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:43:13-69
-131
-132        <receiver
-132-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:37:9-44:20
-133            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-133-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:38:13-78
-134            android:exported="true"
-134-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:39:13-36
-135            android:permission="com.google.android.c2dm.permission.SEND" >
-135-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:40:13-73
-136            <intent-filter>
-136-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:41:13-43:29
-137                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-137-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:42:17-81
-137-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:42:25-78
-138            </intent-filter>
-139        </receiver>
-140
-141        <activity
-141-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\78b13228d1b7806e4595749364e08dfc\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-142            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-142-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\78b13228d1b7806e4595749364e08dfc\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-143            android:exported="false"
-143-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\78b13228d1b7806e4595749364e08dfc\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-144            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-144-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\78b13228d1b7806e4595749364e08dfc\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-145
-146        <provider
-146-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
-147            android:name="com.google.firebase.provider.FirebaseInitProvider"
-147-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
-148            android:authorities="com.example.myapplication.firebaseinitprovider"
-148-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
-149            android:exported="false"
-149-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
-150            android:initOrder="100" />
-150-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+124-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:41:13-35
+125            android:exported="false"
+125-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:42:13-37
+126            android:permission="android.permission.BIND_JOB_SERVICE" />
+126-->[com.google.android.gms:play-services-measurement:17.4.2] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\1ca21ff2013586568e864851e1a9f98e\jetified-play-services-measurement-17.4.2\AndroidManifest.xml:43:13-69
+127
+128        <receiver
+128-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:37:9-44:20
+129            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+129-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:38:13-78
+130            android:exported="true"
+130-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:39:13-36
+131            android:permission="com.google.android.c2dm.permission.SEND" >
+131-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:40:13-73
+132            <intent-filter>
+132-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:41:13-43:29
+133                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+133-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:42:17-81
+133-->[com.google.firebase:firebase-iid:20.1.5] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\13d8d8b1efb3455f1d2cb9103ff3556f\jetified-firebase-iid-20.1.5\AndroidManifest.xml:42:25-78
+134            </intent-filter>
+135        </receiver>
+136
+137        <activity
+137-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\78b13228d1b7806e4595749364e08dfc\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+138            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+138-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\78b13228d1b7806e4595749364e08dfc\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+139            android:exported="false"
+139-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\78b13228d1b7806e4595749364e08dfc\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+140            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+140-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\78b13228d1b7806e4595749364e08dfc\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+141
+142        <provider
+142-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+143            android:name="com.google.firebase.provider.FirebaseInitProvider"
+143-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+144            android:authorities="com.example.myapplication.firebaseinitprovider"
+144-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+145            android:exported="false"
+145-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+146            android:initOrder="100" />
+146-->[com.google.firebase:firebase-common:19.3.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\9f50104a3ed305ca2fc55bd80a29800d\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+147
+148        <meta-data
+148-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\ad072bd06501b4ced252e97ed9ee745e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+149            android:name="com.google.android.gms.version"
+149-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\ad072bd06501b4ced252e97ed9ee745e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+150            android:value="@integer/google_play_services_version" />
+150-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\ad072bd06501b4ced252e97ed9ee745e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 151
-152        <meta-data
-152-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\ad072bd06501b4ced252e97ed9ee745e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-153            android:name="com.google.android.gms.version"
-153-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\ad072bd06501b4ced252e97ed9ee745e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-154            android:value="@integer/google_play_services_version" />
-154-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\ad072bd06501b4ced252e97ed9ee745e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-155
-156        <provider
-156-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
-157            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-157-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
-158            android:authorities="com.example.myapplication.lifecycle-process"
-158-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
-159            android:exported="false"
-159-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
-160            android:multiprocess="true" />
-160-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
-161    </application>
-162
-163</manifest>
+152        <provider
+152-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
+153            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+153-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
+154            android:authorities="com.example.myapplication.lifecycle-process"
+154-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
+155            android:exported="false"
+155-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
+156            android:multiprocess="true" />
+156-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\GWC-NYC-13\.gradle\caches\transforms-2\files-2.1\21622a01bcea9d974767ec438f83b43c\jetified-lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
+157    </application>
+158
+159</manifest>

@@ -46,10 +46,6 @@
             android:name="com.example.myapplication.RegisterActivity"
             android:parentActivityName="com.example.myapplication.LoginActivity"
             android:windowSoftInputMode="stateVisible|adjustPan" />
-        <activity
-            android:name="com.example.myapplication.SettingsActivity"
-            android:label="Settings"
-            android:parentActivityName="com.example.myapplication.LoginActivity" />
         <activity android:name="com.example.myapplication.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

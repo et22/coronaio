@@ -125,7 +125,8 @@ public class RegisterActivity extends AppCompatActivity {
                                             mUserId = mFirebaseUser.getUid();
 
                                             mDatabase.child("users").child(mUserId).child("userName").push().setValue(userName);
-                                            mDatabase.child("users").child(mUserId).child("cellType").push().setValue(mCellType.getSelectedItem().toString());
+                                            //int i = mCellType.getSelectedItemPosition();
+                                            mDatabase.child("users").child(mUserId).child("cellType").push().setValue(mCellType.getSelectedItemPosition());
                                             Toast.makeText(RegisterActivity.this, "Authentication worked.", Toast.LENGTH_LONG).show();
                                             finish();
                                             Log.d(TAG, "createUserWithEmail:failure", task.getException());

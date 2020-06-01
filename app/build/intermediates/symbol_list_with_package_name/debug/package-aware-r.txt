@@ -53,6 +53,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array cell_types
+array cell_types_val
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -2100,6 +2101,7 @@ string action_sign_in
 string action_sign_in_short
 string app_name
 string appbar_scrolling_view_behavior
+string application_settings
 string bottom_sheet_behavior
 string cell_type_text
 string character_counter_content_description
@@ -2204,9 +2206,13 @@ string sign_out
 string signup_error_message
 string signup_error_title
 string status_bar_notification_info_overflow
+string summary_cellType
 string summary_collapsed_preference_list
+string summary_website
 string title_activity_login
 string title_activity_maps
+string title_cellType
+string title_website
 string userName_error_message
 string v7_preference_off
 string v7_preference_on

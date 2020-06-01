@@ -24,7 +24,7 @@
             android:parentActivityName=".LoginActivity"
             android:windowSoftInputMode="stateVisible|adjustPan" />
 
-        
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
