@@ -80,6 +80,8 @@ public class FFAGameView extends View {
     private long prevUpdate = System.currentTimeMillis();
     private long nextUpdate =  System.currentTimeMillis()+ 5000;
     private int onUpdate = 0;
+    public int winiter=0;
+    public boolean won= false;
 
     //old animation instance variables
     private static final int BASE_SPEED_DP_PER_S = 0;
@@ -189,10 +191,10 @@ public class FFAGameView extends View {
             // Restore the canvas to it's previous position and rotation
             canvas.restoreToCount(save);
         }
-        for(Player player: mPlayers)
+        for(Player player1: mPlayers)
         {
             if(player.alpha>0) {
-                drawOtherPlayerHelper(canvas, viewHeight, player);
+                drawOtherPlayerHelper(canvas, viewHeight, player1);
             }
         }
     }
@@ -414,6 +416,18 @@ public class FFAGameView extends View {
      * @param deltaMs time delta since the last frame, in millis
      */
     private void updateState(float deltaMs) {
+        if(won==true){
+            winiter++;
+            if(winiter>20){
+                Intent intent = new Intent(mapsActivity, GameOver.class);
+                intent.putExtra(Constants.SCORE_EXTRA, player.score);
+                intent.putExtra("GameType", "FFA");
+                intent.putExtra("wl", true);
+                onDetachedFromWindow();
+                soloContext.startActivity(intent);
+            }
+        }
+
         // Converting to seconds since PX/S constants are easier to understand
         final float deltaSeconds = deltaMs / 1000f;
         final int viewWidth = getWidth();
@@ -493,12 +507,8 @@ public class FFAGameView extends View {
                                 }
                             }
                             if (numEaten == mPlayers.size()) {
-                                Intent intent = new Intent(mapsActivity, GameOver.class);
-                                intent.putExtra(Constants.SCORE_EXTRA, player.score);
-                                intent.putExtra("GameType", "FFA");
-                                intent.putExtra("wl", true);
-                                onDetachedFromWindow();
-                                soloContext.startActivity(intent);
+                                won = true;
+
                             }
                         }
                     }
