@@ -1,4 +1,4 @@
-#Tue Jun 02 05:20:28 EDT 2020
+#Tue Jun 02 13:44:07 EDT 2020
 base.0=C\:\\Users\\GWC-NYC-13\\Desktop\\cs65fp\\coronaio\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

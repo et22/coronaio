@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 
 /* RegisterActivity manages the registration and edit actions for corona.io.
  * It takes user input - name, password, email, and cell type preference
@@ -116,14 +118,18 @@ public class RegisterActivity extends AppCompatActivity {
                                             mDatabase = FirebaseDatabase.getInstance().getReference();
 
                                             mUserId = mFirebaseUser.getUid();
-
+                                            //Solo FFA
                                             mDatabase.child("users").child(mUserId).child("userName").push().setValue(userName);
                                             mDatabase.child("users").child(mUserId).child("cellType").push().setValue(mCellType.getSelectedItemPosition());
-                                            GameStats gameStats = new GameStats(0, 0);
-                                            mDatabase.child("users").child(mUserId).child("soloStats").push().setValue(gameStats);
-                                            mDatabase.child("users").child(mUserId).child("ffaStats").push().setValue(gameStats);
+                                            ArrayList<GameStats> stats = new ArrayList<>();
+                                            GameStats soloStats = new GameStats(0, 0, "Solo");
+                                            GameStats ffaStats = new GameStats(0, 0, "FFA");
+                                            stats.add(soloStats);
+                                            stats.add(ffaStats);
 
-
+                                            for(int i=0; i<stats.size(); i++){
+                                                mDatabase.child("users").child(mUserId).child("Stats").push().setValue(stats.get(i));
+                                            }
 
                                             Toast.makeText(RegisterActivity.this, "Authentication worked.", Toast.LENGTH_LONG).show();
                                             finish();

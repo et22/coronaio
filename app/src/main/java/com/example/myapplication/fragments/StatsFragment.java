@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.renderscript.Sampler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +22,11 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,13 +37,11 @@ import java.util.List;
  */
 public class StatsFragment extends Fragment {
 
-    int games[] = {10, 20};
-    String gameStrings[] = {"Won", "Lost"};
+    String[] gameStrings = {"Won", "Lost"};
     //Firebase
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private String mUserId;
-    private GameStats mGameStats;
 
     public StatsFragment() {
         // Required empty public constructor
@@ -52,11 +54,11 @@ public class StatsFragment extends Fragment {
 
     }
 
-    private void setupPieChart() {
+    private void setupPieChart(GameStats gameStats) {
         //Populating a list of PieEntries
         List<PieEntry> pieEntries = new ArrayList<>();
-        pieEntries.add(new PieEntry(games[0], gameStrings[0]));
-        pieEntries.add(new PieEntry(games[1], gameStrings[1]));
+        pieEntries.add(new PieEntry(gameStats.getGamesWon(), gameStrings[0]));
+        pieEntries.add(new PieEntry(gameStats.getGamesLost(), gameStrings[1]));
 
 
         PieDataSet dataSet = new PieDataSet(pieEntries, getResources().getString(R.string.pie_label));
@@ -69,12 +71,18 @@ public class StatsFragment extends Fragment {
         dataSet.setColors(colors);
         PieData data = new PieData(dataSet);
 
-        //get the chart
-        PieChart chart = (PieChart) getView().findViewById(R.id.chart);
-        chart.setData(data);
+        PieChart chart;
         Description description = new Description();
-        description.setText("FFA Mode");
+        //get the chart
+        if(gameStats.getGameType().equals("Solo")){
+            chart = (PieChart) getView().findViewById(R.id.chart);
+            description.setText("Solo Mode");
+        }else{
+            chart = (PieChart) getView().findViewById(R.id.chart2);
+            description.setText("FFA Mode");
+        }
         description.setTextSize(20);
+        chart.setData(data);
         chart.setDescription(description);
         chart.setNoDataText("You have not played a game yet");
         chart.animateY(2000);
@@ -102,8 +110,27 @@ public class StatsFragment extends Fragment {
     }
 
     private void retrieveStats() {
-        DatabaseReference soloStats = FirebaseDatabase.getInstance().getReference("/users/" + mUserId + "/soloStats" );;
-        DatabaseReference ffaStats = FirebaseDatabase.getInstance().getReference("/users/" + mUserId + "/ffaStats");;
-        setupPieChart();
+        DatabaseReference stats = FirebaseDatabase.getInstance().getReference("/users/" + mUserId + "/Stats");
+        ValueEventListener listener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.hasChildren()){
+                    for(DataSnapshot myDataSnapshot: dataSnapshot.getChildren()){
+                        GameStats gameStats = myDataSnapshot.getValue(GameStats.class);
+                        assert gameStats != null;
+                        setupPieChart(gameStats);
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        stats.addListenerForSingleValueEvent(listener);
+
     }
+
 }

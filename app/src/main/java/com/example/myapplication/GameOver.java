@@ -20,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class GameOver extends AppCompatActivity {
     private View mWonScore;
     private Button mBackHome, mPlayAgain;
@@ -29,9 +31,8 @@ public class GameOver extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private String mUserId;
-    private String mStat;
-    private GameStats mGameStats;
     private boolean mWin;
+    private String mGameType;
 
 
 
@@ -53,13 +54,8 @@ public class GameOver extends AppCompatActivity {
         final Intent from_intent = getIntent();
         int score = from_intent.getIntExtra(Constants.SCORE_EXTRA,0);
         mWin = from_intent.getBooleanExtra("wl", true);
-        String gameType = from_intent.getStringExtra("GameType");
-        if(gameType.equals("Solo")){
-            mStat = "soloStats";
-        }else{
-            mStat = "ffaStats";
-        }
-        mDatabase = FirebaseDatabase.getInstance().getReference("/users/" + mUserId + "/" + mStat);
+        mGameType = from_intent.getStringExtra("GameType");
+        mDatabase = FirebaseDatabase.getInstance().getReference("/users/" + mUserId + "/Stats" );
         if(!mWin) mWonScore.setBackground(getDrawable(R.drawable.you_lost));
 
         saveWin();
@@ -87,20 +83,46 @@ public class GameOver extends AppCompatActivity {
         ValueEventListener onceListen = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if(dataSnapshot.hasChildren()){
-//                    for(DataSnapshot myDataSnapshot: dataSnapshot.getChildren()){
-//                        mGameStats = myDataSnapshot.getValue(GameStats.class);
+                String key;
+                if(dataSnapshot.hasChildren()){
+                    for(DataSnapshot myDataSnapshot: dataSnapshot.getChildren()){
+                        GameStats test = myDataSnapshot.getValue(GameStats.class);
+                        assert test != null;
+                        if(test.getGameType().equals(mGameType)){
+                            GameStats newGameStats;
+                            key = myDataSnapshot.getKey();
+                            if(mWin){
+                                newGameStats = new GameStats(test.getGamesWon() + 1, test.getGamesLost(), mGameType);
+                            }else{
+                                newGameStats = new GameStats(test.getGamesWon(), test.getGamesLost() + 1, mGameType);
+                            }
+                            mDatabase.child(key).setValue(newGameStats);
+                        }
+                        //key = myDataSnapshot.getKey();
+                        //mGameStats.add(test);
+                    }
+                }
+//                for(int i=0; i<mGameStats.size(); i++){
+//                    GameStats gameStats = mGameStats.get(i);
+//                    GameStats newGameStats;
+//                    if(gameStats.getGameType().equals(mGameType)){
+//                        if(mWin){
+//                            newGameStats = new GameStats(gameStats.getGamesWon() + 1, gameStats.getGamesLost(), mGameType);
+//                        }else{
+//                            newGameStats = new GameStats(gameStats.getGamesWon(), gameStats.getGamesLost() + 1, mGameType);
+//                        }
+//                        mDatabase.child(key).setValue(newGameStats);
 //                    }
 //                }
-                mGameStats = dataSnapshot.getValue(GameStats.class);
-                GameStats newGameStats;
-                if(mWin){
-                    newGameStats = new GameStats(mGameStats.getGamesWon() + 1, mGameStats.getGamesLost());
-                }else{
-                    newGameStats = new GameStats(mGameStats.getGamesWon(), mGameStats.getGamesLost() + 1);
-                }
 
-                mDatabase.setValue(newGameStats);
+//                GameStats newGameStats;
+//                if(mWin){
+//                    newGameStats = new GameStats(mGameStats.getGamesWon() + 1, mGameStats.getGamesLost());
+//                }else{
+//                    newGameStats = new GameStats(mGameStats.getGamesWon(), mGameStats.getGamesLost() + 1);
+//                }
+//
+//                mDatabase.setValue(newGameStats);
             }
 
             @Override
