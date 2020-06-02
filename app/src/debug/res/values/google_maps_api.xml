@@ -22,5 +22,5 @@
     Ethan's API key: AIzaSyAMHrHD5Xl1_NFiQzt8jhvyGEx2VhbDBwg
     Kim's API key: AIzaSyDUjUdsn6Fasbx4GO8A0tFSBT1-RqfmJ6k
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDUjUdsn6Fasbx4GO8A0tFSBT1-RqfmJ6k</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAMHrHD5Xl1_NFiQzt8jhvyGEx2VhbDBwg</string>
 </resources>

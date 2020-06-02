@@ -191,7 +191,9 @@ public class FFAGameView extends View {
         }
         for(Player player: mPlayers)
         {
-            drawOtherPlayerHelper(canvas, viewHeight, player);
+            if(player.alpha>0) {
+                drawOtherPlayerHelper(canvas, viewHeight, player);
+            }
         }
     }
 
@@ -490,9 +492,38 @@ public class FFAGameView extends View {
                             player.score += 4;
                             player.score += otherPlayer.score/2;
                             haveEaten.add(otherPlayer.userid);
+                            int numEaten = 0;
+                            for(Player otherPlayer1: mPlayers){
+                                if(haveEaten.contains(otherPlayer1.userid)){
+                                    numEaten++;
+                                }
+                            }
+                            if(numEaten==mPlayers.size()){
+                                Intent intent = new Intent(mapsActivity, GameOver.class);
+                                intent.putExtra(Constants.SCORE_EXTRA, player.score);
+                                intent.putExtra("GameType", "FFA");
+                                intent.putExtra("wl", true);
+                                onDetachedFromWindow();
+                                soloContext.startActivity(intent);
+                            }
                         }
                     }
                 }
+            }
+            ArrayList<String> toRemove = new ArrayList<String>();
+            for(String uid: haveEaten){
+                boolean playerContains = false;
+                for(Player others: mPlayers){
+                    if(others.userid.equals(uid)){
+                        playerContains = true;
+                    }
+                }
+                if(!playerContains){
+                    toRemove.add(uid);
+                }
+            }
+            for(String uid: toRemove){
+                haveEaten.remove(uid);
             }
         }
     }
