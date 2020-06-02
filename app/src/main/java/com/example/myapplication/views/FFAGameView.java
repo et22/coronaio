@@ -476,29 +476,23 @@ public class FFAGameView extends View {
                 }
             }
             //check intersection with other player
-            for(Player otherPlayer: mPlayers){
-                if(player.dpX+dpsize>otherPlayer.dpX&&player.dpX-dpsize<otherPlayer.dpX&&player.dpY+dpsize>otherPlayer.dpY&&player.dpY-dpsize<otherPlayer.dpY) {
-                    if(otherPlayer.scale>player.scale){
-                        Intent intent = new Intent(mapsActivity, GameOver.class);
-                        intent.putExtra(Constants.SCORE_EXTRA, player.score);
-                        intent.putExtra("GameType", "FFA");
-                        intent.putExtra("wl", false);
-                        onDetachedFromWindow();
-                        soloContext.startActivity(intent);
-                    }
-                    else if (otherPlayer.scale<player.scale){
-                        if(!haveEaten.contains(otherPlayer.userid)) {
+            for(Player otherPlayer: mPlayers) {
+                final float otherDpsize = convertPixelsToDp(otherPlayer.scale * mBaseSize, mapsActivity);
+
+                if (player.dpX + dpsize > otherPlayer.dpX + otherDpsize && player.dpX - dpsize < otherPlayer.dpX - otherDpsize && player.dpY + dpsize > otherPlayer.dpY + otherDpsize && player.dpY - dpsize < otherPlayer.dpY - otherDpsize) {
+                    if (otherPlayer.scale < player.scale) {
+                        if (!haveEaten.contains(otherPlayer.userid)) {
                             player.scale += otherPlayer.scale / 2;
                             player.score += 4;
-                            player.score += otherPlayer.score/2;
+                            player.score += otherPlayer.score / 2;
                             haveEaten.add(otherPlayer.userid);
                             int numEaten = 0;
-                            for(Player otherPlayer1: mPlayers){
-                                if(haveEaten.contains(otherPlayer1.userid)){
+                            for (Player otherPlayer1 : mPlayers) {
+                                if (haveEaten.contains(otherPlayer1.userid)) {
                                     numEaten++;
                                 }
                             }
-                            if(numEaten==mPlayers.size()){
+                            if (numEaten == mPlayers.size()) {
                                 Intent intent = new Intent(mapsActivity, GameOver.class);
                                 intent.putExtra(Constants.SCORE_EXTRA, player.score);
                                 intent.putExtra("GameType", "FFA");
@@ -507,6 +501,16 @@ public class FFAGameView extends View {
                                 soloContext.startActivity(intent);
                             }
                         }
+                    }
+                }
+                if (player.dpX + dpsize < otherPlayer.dpX + otherDpsize && player.dpX - dpsize > otherPlayer.dpX - otherDpsize && player.dpY + dpsize < otherPlayer.dpY + otherDpsize && player.dpY - dpsize > otherPlayer.dpY - otherDpsize) {
+                    if (otherPlayer.scale > player.scale) {
+                        Intent intent = new Intent(mapsActivity, GameOver.class);
+                        intent.putExtra(Constants.SCORE_EXTRA, player.score);
+                        intent.putExtra("GameType", "FFA");
+                        intent.putExtra("wl", false);
+                        onDetachedFromWindow();
+                        soloContext.startActivity(intent);
                     }
                 }
             }
