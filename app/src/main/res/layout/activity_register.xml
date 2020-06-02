@@ -23,7 +23,7 @@
         android:textColor="@android:color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:text="Enter your username, email and password, your username will be visible to other players"
+        android:text="@string/register_instructions"
         style="@style/InfoOverlayText"
         android:backgroundTint="@android:color/white"
         />

@@ -33,7 +33,6 @@ public class SettingsFragment extends Fragment {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     DatabaseReference mDatabase;
-    private String mUserId;
 
 
     @Nullable
@@ -53,8 +52,7 @@ public class SettingsFragment extends Fragment {
         assert getFragmentManager() != null;
         getFragmentManager().beginTransaction()
                 .replace(R.id.settings, new SettingsFragment.myPrefFrag()).commit();
-        //Toolbar toolbar = view.findViewById(R.id.app_bar);
-//        view.setSupportActionBar(toolbar);
+
         mSignOut = view.findViewById(R.id.button_sign_out);
         // set onclick listener for signout button
         onSignOutClick();
@@ -71,13 +69,12 @@ public class SettingsFragment extends Fragment {
     public void onPause() {
         super.onPause();
         Log.d("life", "onPause");
-        //We check if the user's settings for either imperial or metric
+        //We check if the user's settings for the selected cell type
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
         String s = sharedPref.getString(KEY_UNIT, "0");
         int index = Integer.parseInt(s);
-        //List<String> cellTypes = Arrays.asList(getResources().getStringArray(R.array.cell_types));
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        mUserId = mUser.getUid();
+        String mUserId = mUser.getUid();
         mDatabase.child("users").child(mUserId).child("cellType").setValue(index);
 
     }
@@ -86,10 +83,12 @@ public class SettingsFragment extends Fragment {
         mSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO have to figure out how not to return to this activity if the user presses the back button
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getContext(), LoginActivity.class);
+                // https://riptutorial.com/android/example/17590/clear-your-current-activity-stack-and-launch-a-new-activity
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
     }

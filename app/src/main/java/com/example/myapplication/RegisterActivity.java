@@ -14,10 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import com.example.myapplication.database.FirebaseHelper;
-import com.farbod.labelledspinner.LabelledSpinner;
+import com.example.myapplication.models.GameStats;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -25,6 +23,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 
 /* RegisterActivity manages the registration and edit actions for corona.io.
@@ -40,7 +40,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mNameView, mEmailView, mPasswordView;
         private Spinner mCellType;
         private Button mRegisterButton;
-        private FirebaseHelper firebaseHelper;
         private FirebaseAuth mAuth;
         private FirebaseUser mFirebaseUser;
         private DatabaseReference mDatabase;
@@ -51,14 +50,10 @@ public class RegisterActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_register);
-            //Initialize Firebase helper
-            //firebaseHelper = new FirebaseHelper();
+
             //initialize firebase auth
             mAuth = FirebaseAuth.getInstance();
 
-            //Makes the toolbar visible
-            //Toolbar toolbar = findViewById(R.id.app_bar);
-            //setSupportActionBar(toolbar);
             //Makes the "up" button visible and changes manifest to make it function
             ActionBar actionBar = getSupportActionBar();
             if (actionBar != null) {
@@ -123,10 +118,19 @@ public class RegisterActivity extends AppCompatActivity {
                                             mDatabase = FirebaseDatabase.getInstance().getReference();
 
                                             mUserId = mFirebaseUser.getUid();
-
+                                            //Solo FFA
                                             mDatabase.child("users").child(mUserId).child("userName").push().setValue(userName);
-                                            //int i = mCellType.getSelectedItemPosition();
                                             mDatabase.child("users").child(mUserId).child("cellType").push().setValue(mCellType.getSelectedItemPosition());
+                                            ArrayList<GameStats> stats = new ArrayList<>();
+                                            GameStats soloStats = new GameStats(0, 0, "Solo");
+                                            GameStats ffaStats = new GameStats(0, 0, "FFA");
+                                            stats.add(soloStats);
+                                            stats.add(ffaStats);
+
+                                            for(int i=0; i<stats.size(); i++){
+                                                mDatabase.child("users").child(mUserId).child("Stats").push().setValue(stats.get(i));
+                                            }
+
                                             Toast.makeText(RegisterActivity.this, "Authentication worked.", Toast.LENGTH_LONG).show();
                                             finish();
                                             Log.d(TAG, "createUserWithEmail:failure", task.getException());
@@ -138,17 +142,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         }
                                     }
                                 });
-//                        String result = firebaseHelper.addNewUser(email, password, userName, mCellType.getSelectedItemPosition(), RegisterActivity.this);
-//                        // If user is successfully registered, we lead them to loginActivity
-//                        if(result.equals("success")){
-//                            Toast.makeText(RegisterActivity.this, "Authentication worked.",
-//                                    Toast.LENGTH_LONG).show();
-//                            finish();
-//                        }else{
-//                            Toast.makeText(RegisterActivity.this, "Authentication failed: "
-//                                            + result,
-//                                    Toast.LENGTH_LONG).show();
-//                        }
 
                     }
                 }

@@ -12,20 +12,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapplication.database.FirebaseHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
 
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "fire";
     private Button mSignIn, mCreateAccount;
     private EditText mEmail, mPassword;
-    private FirebaseHelper firebaseHelper;
+
     private FirebaseAuth mAuth;
 
 
@@ -33,8 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //initialize firebase helper
-        //firebaseHelper = new FirebaseHelper();
 
         //initialize firebase auth
         mAuth = FirebaseAuth.getInstance();
@@ -113,15 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         }
                     });
-//            boolean test = firebaseHelper.isSignedIn(email, password, LoginActivity.this);
-//            if(test){
-//
-//                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-//                startActivity(intent);
-//            }else{
-//                Toast.makeText(LoginActivity.this, "Authentication failed.",
-//                        Toast.LENGTH_SHORT).show();
-//            }
+
         }
 
     }
