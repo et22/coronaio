@@ -34,4 +34,6 @@
     <string name="title_website">Website</string>
     <string name="summary_website">Visit our website</string>
     <string name="time">"Time: "</string>
+    <string name="pie_label">Game Performance</string>
+    <string name="register_instructions">Enter your username, email and password, your username will be visible to other players</string>
 </resources>

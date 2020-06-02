@@ -1627,7 +1627,6 @@ id barrier
 id beginning
 id blocking
 id bottom
-id button
 id buttonPanel
 id button_create_account
 id button_home
@@ -1645,6 +1644,8 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id chart
+id chart2
 id checkbox
 id checked
 id chip
@@ -2199,10 +2200,12 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pie_label
 string preference_copied
 string project_id
 string prompt_email
 string prompt_password
+string register_instructions
 string score_text
 string search_menu_title
 string sign_out

@@ -14,10 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import com.example.myapplication.database.FirebaseHelper;
-import com.farbod.labelledspinner.LabelledSpinner;
+import com.example.myapplication.models.GameStats;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -40,7 +38,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mNameView, mEmailView, mPasswordView;
         private Spinner mCellType;
         private Button mRegisterButton;
-        private FirebaseHelper firebaseHelper;
         private FirebaseAuth mAuth;
         private FirebaseUser mFirebaseUser;
         private DatabaseReference mDatabase;
@@ -51,14 +48,10 @@ public class RegisterActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_register);
-            //Initialize Firebase helper
-            //firebaseHelper = new FirebaseHelper();
+
             //initialize firebase auth
             mAuth = FirebaseAuth.getInstance();
 
-            //Makes the toolbar visible
-            //Toolbar toolbar = findViewById(R.id.app_bar);
-            //setSupportActionBar(toolbar);
             //Makes the "up" button visible and changes manifest to make it function
             ActionBar actionBar = getSupportActionBar();
             if (actionBar != null) {
@@ -125,8 +118,13 @@ public class RegisterActivity extends AppCompatActivity {
                                             mUserId = mFirebaseUser.getUid();
 
                                             mDatabase.child("users").child(mUserId).child("userName").push().setValue(userName);
-                                            //int i = mCellType.getSelectedItemPosition();
                                             mDatabase.child("users").child(mUserId).child("cellType").push().setValue(mCellType.getSelectedItemPosition());
+                                            GameStats gameStats = new GameStats(0, 0);
+                                            mDatabase.child("users").child(mUserId).child("soloStats").push().setValue(gameStats);
+                                            mDatabase.child("users").child(mUserId).child("ffaStats").push().setValue(gameStats);
+
+
+
                                             Toast.makeText(RegisterActivity.this, "Authentication worked.", Toast.LENGTH_LONG).show();
                                             finish();
                                             Log.d(TAG, "createUserWithEmail:failure", task.getException());
@@ -138,17 +136,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         }
                                     }
                                 });
-//                        String result = firebaseHelper.addNewUser(email, password, userName, mCellType.getSelectedItemPosition(), RegisterActivity.this);
-//                        // If user is successfully registered, we lead them to loginActivity
-//                        if(result.equals("success")){
-//                            Toast.makeText(RegisterActivity.this, "Authentication worked.",
-//                                    Toast.LENGTH_LONG).show();
-//                            finish();
-//                        }else{
-//                            Toast.makeText(RegisterActivity.this, "Authentication failed: "
-//                                            + result,
-//                                    Toast.LENGTH_LONG).show();
-//                        }
 
                     }
                 }
