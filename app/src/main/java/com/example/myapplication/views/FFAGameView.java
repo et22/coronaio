@@ -510,21 +510,6 @@ public class FFAGameView extends View {
                     }
                 }
             }
-            ArrayList<String> toRemove = new ArrayList<String>();
-            for(String uid: haveEaten){
-                boolean playerContains = false;
-                for(Player others: mPlayers){
-                    if(others.userid.equals(uid)){
-                        playerContains = true;
-                    }
-                }
-                if(!playerContains){
-                    toRemove.add(uid);
-                }
-            }
-            for(String uid: toRemove){
-                haveEaten.remove(uid);
-            }
         }
     }
 
