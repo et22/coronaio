@@ -2,9 +2,13 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +22,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int PERMISSION_REQUEST_CODE = 1;
     BottomNavigationView bottomNav;
     ViewPager viewPager;
     ArrayList<Fragment> fragments;
@@ -44,9 +49,21 @@ public class MainActivity extends AppCompatActivity {
         bnViewPagerAdapter = new BNViewPagerAdapter(this.getSupportFragmentManager(), fragments);
         viewPager.setAdapter(bnViewPagerAdapter);
 
-
         viewPager.addOnPageChangeListener(viewPagerListener);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+        if (!checkPermission())
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
+
+    }
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        if (!(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+            finish();
+        }
+    }
+    private boolean checkPermission(){
+        int allowed = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+        if (allowed == PackageManager.PERMISSION_GRANTED) return true;
+        else return false;
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

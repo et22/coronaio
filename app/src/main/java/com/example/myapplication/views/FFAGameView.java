@@ -508,7 +508,6 @@ public class FFAGameView extends View {
                             }
                             if (numEaten == mPlayers.size()) {
                                 won = true;
-
                             }
                         }
                     }

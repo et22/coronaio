@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
+ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\b85b7e0481f3222852aee40ec4c0fa26\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.farbod.labelledspinner:labelledspinner:1.1.5] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\a7bcd3b045579e65b233f049c3398187\jetified-labelledspinner-1.1.5\AndroidManifest.xml:17:1-29:12
 MERGED from [androidx.preference:preference:1.1.1] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\677089b97d53f8d69ea3909305316c93\preference-1.1.1\AndroidManifest.xml:17:1-24:12
@@ -74,22 +74,22 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\ebtbl\.gradle\
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\a01cfd72e4073a36af210066f7659e03\jetified-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\0da708d12bab31561a46795c2abb6ffb\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\99263ae0355f528cdb252f81976d504b\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
-INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
 	package
 		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:5:5-40
 		INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
+		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
 		INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:4:5-51
 	android:versionCode
 		INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-61:12
+		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:1-62:12
 		INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:2:11-69
@@ -104,7 +104,7 @@ ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\And
 	android:name
 		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:12:22-74
 application
-ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:14:5-59:19
+ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:14:5-61:19
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\b85b7e0481f3222852aee40ec4c0fa26\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\b85b7e0481f3222852aee40ec4c0fa26\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.farbod.labelledspinner:labelledspinner:1.1.5] C:\Users\ebtbl\.gradle\caches\transforms-2\files-2.1\a7bcd3b045579e65b233f049c3398187\jetified-labelledspinner-1.1.5\AndroidManifest.xml:27:5-20
@@ -218,21 +218,25 @@ ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\And
 	android:name
 		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:48:13-58
 activity#com.example.myapplication.MapsActivity
-ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:51:9-55:12
+ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:51:9-57:12
+	android:screenOrientation
+		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:54:13-49
 	android:label
 		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:53:13-56
+	tools:ignore
+		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:55:13-53
 	android:theme
-		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:54:13-60
+		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:56:13-60
 	android:name
 		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:52:13-41
 service#com.example.myapplication.loaders.TrackingService
-ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:57:9-60
+ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:59:9-60
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:57:18-57
+		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:59:18-57
 service#com.example.myapplication.loaders.LocationIntentService
-ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:58:9-66
+ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:60:9-66
 	android:name
-		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:58:18-63
+		ADDED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml:60:18-63
 uses-sdk
 INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ebtbl\OneDrive - Dartmouth College\coronaio\app\src\main\AndroidManifest.xml
